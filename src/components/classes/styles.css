@@ -43,3 +43,22 @@
     transform: scale(1.01);
     background-color: whitesmoke;
 }
+
+.translucent {
+    opacity: 50%;
+}
+
+.newlistItem {
+    background-color: lightgrey;
+    margin: 6px;
+    height: auto;
+    width: 70%;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: solid 1px black;
+
+    transition: ease-in-out 0.3s;
+
+    display: flex;
+    justify-content: space-between;
+}

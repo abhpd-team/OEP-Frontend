@@ -10,6 +10,8 @@ class Classes extends Component{
             loading: true,
         };
         this.fetchData = this.fetchData.bind(this);
+        this.postNewCandidate = this.postNewCandidate.bind(this);
+        this.delCandidate = this.delCandidate.bind(this);
     }
 
     async fetchData(){
@@ -24,17 +26,12 @@ class Classes extends Component{
 
         const data = await response.json();
 
-
         const classId = this.props.match.params.classId;
-
-        console.log(classId);
 
         function findClass () {
             for (let index = 0; index < data.length; index++) {
                 const element = data[index];
                 if(element._id===classId){
-                    console.log("found");
-                    console.log(element);
                     return element;
                 }
             }
@@ -52,6 +49,96 @@ class Classes extends Component{
         this.setState({loading:false});
     }
 
+    async postNewCandidate(){
+        const newCandidateId = document.getElementById("newCandidateId").value;
+        const newCandidateName = document.getElementById("newCandidateName").value;
+        const newCandidateEmail = document.getElementById("newCandidateEmail").value;
+
+        document.getElementById("newCandidateId").value="";
+        document.getElementById("newCandidateName").value="";
+        document.getElementById("newCandidateEmail").value="";
+
+        console.log(newCandidateId);
+        console.log(newCandidateName);
+        console.log(newCandidateEmail);
+
+        this.setState((state)=>{
+            const newState = JSON.parse(JSON.stringify(state));
+            newState.class.candidates.push({
+                candidateId: newCandidateId,
+                candidateName: newCandidateName,
+                candidateEmail: newCandidateEmail
+            })
+            return newState;
+        },async ()=>{
+            console.log(this.state.class);
+
+            const response = await fetch("http://localhost:5000/classes/upd",{
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: "abhishek",
+                    password: "abhishek",
+                    updatedClass: this.state.class
+                })
+            });
+
+            const data = await response.json();
+
+            console.log(data);
+
+            await this.fetchData();
+        });
+    }
+
+    async delCandidate(id){
+        this.setState((state)=>{
+            const newState = JSON.parse(JSON.stringify(state));
+            const getIndx = () => {
+                for (let index = 0; index < newState.class.candidates.length; index++) {
+                    const element = newState.class.candidates[index];
+                    if(element._id===id){
+                        return index;
+                    }
+                }
+                return -1;
+            };
+
+            const indx = getIndx();
+
+            console.log(indx);
+
+            if (indx > -1) {
+                newState.class.candidates.splice(indx, 1);
+            }
+
+            return newState;
+        },async ()=>{
+            console.log(this.state.class.candidates);
+
+            const response = await fetch("http://localhost:5000/classes/upd",{
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: "abhishek",
+                    password: "abhishek",
+                    updatedClass: this.state.class
+                })
+            });
+
+            const data = await response.json();
+
+            console.log(data);
+
+            await this.fetchData();
+        });
+    }
+
+
     render(){
         return(
             <div>
@@ -67,9 +154,16 @@ class Classes extends Component{
                                     <h2>{e.candidateId}</h2>
                                     <h2>{e.candidateName}</h2>
                                     <h2>{e.candidateEmail}</h2>
+                                    <button onClick={()=>this.delCandidate(e._id)}>--X--</button>
                                 </div>
                             )
                         })}
+                        <div className="newlistItem translucent">
+                            <input id="newCandidateId" type="text"/>
+                            <input id="newCandidateName" type="text"/>
+                            <input id="newCandidateEmail" type="text"/>
+                            <button onClick={this.postNewCandidate}>Add new Candidate</button>
+                        </div>
                     </div>
                 </div>
                 }

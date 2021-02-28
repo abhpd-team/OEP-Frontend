@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.examHeading {
+    text-align: center;
+    margin: 50px;
+}
+
+.listBlock {
+    /* background-color: burlywood; */
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.listItem {
+    background-color: lightgrey;
+    margin: 6px;
+    height: 100px;
+    width: 70%;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: solid 1px black;
+
+    transition: ease-in-out 0.3s;
+}
+
+.listItem:hover {
+    transition: ease-in-out 0.3s;
+    box-shadow: grey 0.1px 0.1px 15px;
+    transform: scale(1.01);
+    background-color: whitesmoke;
+}

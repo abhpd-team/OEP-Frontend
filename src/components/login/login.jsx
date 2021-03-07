@@ -28,9 +28,9 @@ class Login extends React.Component{
         return (
             <div>
                 <h1>Login</h1>
-                <input type="text" name="" id="username" required onChange={this.formChange}/>
-                <input type="text" name="" id="password" required onChange={this.formChange}/>
-                <button onClick={this.loginButtonHandler}></button>
+                <p>Username: </p><input type="text" name="" id="username" required onChange={this.formChange}/>
+                <p>Password: </p><input type="text" name="" id="password" required onChange={this.formChange}/>
+                <button onClick={this.loginButtonHandler}>Login</button>
             </div>
         );
     }

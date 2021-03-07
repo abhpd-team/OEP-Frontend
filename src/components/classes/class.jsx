@@ -158,7 +158,7 @@ class Classes extends Component{
                                 </div>
                             )
                         })}
-                        <div className={`${stylesCSS.newlistItem}, ${stylesCSS.translucent}`}>
+                        <div className={`${stylesCSS.newlistItem} ${stylesCSS.translucent}`}>
                             <input id="newCandidateId" type="text"/>
                             <input id="newCandidateName" type="text"/>
                             <input id="newCandidateEmail" type="text"/>

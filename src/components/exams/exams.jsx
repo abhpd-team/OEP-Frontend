@@ -15,7 +15,7 @@ class Exams extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://localhost:5000/exams/get",{
+        const response = await fetch("http://oep-api.herokuapp.com/exams/get",{
             method: "POST",
             body: {
                 username: "abhishek",
@@ -36,7 +36,7 @@ class Exams extends Component{
     }
 
     async deleteExam(id){
-        const response = await fetch("http://localhost:5000/exams/del",{
+        const response = await fetch("http://oep-api.herokuapp.com/exams/del",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ class Classes extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://localhost:5000/questionbanks/get",{
+        const response = await fetch("http://oep-api.herokuapp.com/questionbanks/get",{
             method: "POST",
             body: {
                 username: "abhishek",

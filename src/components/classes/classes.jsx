@@ -16,7 +16,7 @@ class Classes extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://localhost:5000/classes/get",{
+        const response = await fetch("http://oep-api.herokuapp.com/classes/get",{
             method: "POST",
             body: {
                 username: "abhishek",
@@ -41,7 +41,7 @@ class Classes extends Component{
 
         document.getElementById("newClassInput").value = "";
 
-        const response = await fetch("http://localhost:5000/classes/new",{
+        const response = await fetch("http://oep-api.herokuapp.com/classes/new",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ class Classes extends Component{
     }
 
     async deleteClass(id){
-        const response = await fetch("http://localhost:5000/classes/del",{
+        const response = await fetch("http://oep-api.herokuapp.com/classes/del",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

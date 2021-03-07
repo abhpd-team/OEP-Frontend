@@ -16,7 +16,7 @@ class Classes extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://localhost:5000/classes/get",{
+        const response = await fetch("http://oep-api.herokuapp.com/classes/get",{
             method: "POST",
             body: {
                 username: "abhishek",
@@ -73,7 +73,7 @@ class Classes extends Component{
         },async ()=>{
             console.log(this.state.class);
 
-            const response = await fetch("http://localhost:5000/classes/upd",{
+            const response = await fetch("http://oep-api.herokuapp.com/classes/upd",{
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -118,7 +118,7 @@ class Classes extends Component{
         },async ()=>{
             console.log(this.state.class.candidates);
 
-            const response = await fetch("http://localhost:5000/classes/upd",{
+            const response = await fetch("http://oep-api.herokuapp.com/classes/upd",{
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

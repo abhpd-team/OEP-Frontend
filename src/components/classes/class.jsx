@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./styles.css";
+import stylesCSS from "./styles.module.css";
 
 class Classes extends Component{
     constructor(props){
@@ -146,11 +146,11 @@ class Classes extends Component{
                 "Loading..Please Wait."
                 :
                 <div>
-                    <h1 className="classesHeading">{this.state.class.className}</h1>
-                    <div className="listBlock">
+                    <h1 className={stylesCSS.classesHeading}>{this.state.class.className}</h1>
+                    <div className={stylesCSS.listBlock}>
                         {this.state.class.candidates.map((e,indx)=>{
                             return (
-                                <div className="listItem" key={indx}>
+                                <div className={stylesCSS.listItem} key={indx}>
                                     <h2>{e.candidateId}</h2>
                                     <h2>{e.candidateName}</h2>
                                     <h2>{e.candidateEmail}</h2>
@@ -158,7 +158,7 @@ class Classes extends Component{
                                 </div>
                             )
                         })}
-                        <div className="newlistItem translucent">
+                        <div className={`${stylesCSS.newlistItem}, ${stylesCSS.translucent}`}>
                             <input id="newCandidateId" type="text"/>
                             <input id="newCandidateName" type="text"/>
                             <input id="newCandidateEmail" type="text"/>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./styles.css";
+import stylesCSS from "./styles.module.css";
 
 class Exams extends Component{
     constructor(props){
@@ -58,14 +58,14 @@ class Exams extends Component{
     render(){
         return(
             <div>
-                <h1 className="examHeading">Exams</h1>
-                <div className="listBlock">
+                <h1 className={stylesCSS.examHeading}>Exams</h1>
+                <div className={stylesCSS.listBlock}>
                     {this.state.loading?
                     "Loading, please wait ..."
                     : 
                     this.state.exams.map((e,indx)=>{
                         return (
-                            <div className="listItem" key={indx}>
+                            <div className={stylesCSS.listItem} key={indx}>
                                 <h2>{e.examName}</h2>
                                 <button onClick={async ()=> await this.deleteExam(e._id)}>--X--</button>
                             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./styles.css";
+import stylesCSS from "./styles.module.css";
 
 class Classes extends Component{
     constructor(props){
@@ -85,8 +85,8 @@ class Classes extends Component{
     render(){
         return(
             <div>
-                <h1 className="classesHeading">Classes</h1>
-                <div className="listBlock">
+                <h1 className={stylesCSS.classesHeading}>Classes</h1>
+                <div className={stylesCSS.listBlock}>
                     {this.state.loading?
                     "Loading, please wait ..."
                     : 
@@ -95,14 +95,14 @@ class Classes extends Component{
                         //     return <div></div>;
                         // }
                         return (
-                            <div className="listItem" key={indx}>
+                            <div className={stylesCSS.listItem} key={indx}>
                                 <h2>{e.className}</h2>
                                 <a href={"/classes/"+e._id}><button><h4>Edit</h4></button></a>
                                 <button onClick={async ()=> await this.deleteClass(e._id)}><h4>--X--</h4></button>
                             </div>
                         )
                     })}
-                    <div className="newlistItem translucent">
+                    <div className={`${stylesCSS.newlistItem} ${stylesCSS.translucent}`}>
                         <input id="newClassInput" type="text"/>
                         <button onClick={this.postNewClass}>Create new Class</button>
                     </div>

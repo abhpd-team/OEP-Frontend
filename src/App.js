@@ -9,6 +9,8 @@ import Class from "./components/classes/class";
 import Exams from "./components/exams/exams";
 import QuestionBanks from "./components/questionbanks/questionbanks";
 
+require("dotenv").config();
+
 function App() {
     return (
         <Router>

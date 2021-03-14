@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import stylesCSS from "./styles.module.css";
 
+import Cookies from "js-cookie";
+
 class Classes extends Component{
     constructor(props){
         super(props);
@@ -16,11 +18,11 @@ class Classes extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://oep-api.herokuapp.com/classes/get",{
+        const response = await fetch(process.env.REACT_APP_API_URI + "/classes/get",{
             method: "POST",
-            body: {
-                username: "abhishek",
-                password: "abhishek"
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': "Bearer ".concat(Cookies.get("jwt"))
             }
         });
 
@@ -46,7 +48,11 @@ class Classes extends Component{
 
     async componentDidMount(){
         await this.fetchData();
-        this.setState({loading:false});
+        if(this.state.class){
+            this.setState({loading:false});
+        } else{
+            console.log("Invalid Request/Invalid token");
+        }
     }
 
     async postNewCandidate(){
@@ -73,14 +79,13 @@ class Classes extends Component{
         },async ()=>{
             console.log(this.state.class);
 
-            const response = await fetch("http://oep-api.herokuapp.com/classes/upd",{
+            const response = await fetch(process.env.REACT_APP_API_URI + "/classes/upd",{
                 method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'authorization': "Bearer ".concat(Cookies.get("jwt"))
                 },
                 body: JSON.stringify({
-                    username: "abhishek",
-                    password: "abhishek",
                     updatedClass: this.state.class
                 })
             });
@@ -118,14 +123,13 @@ class Classes extends Component{
         },async ()=>{
             console.log(this.state.class.candidates);
 
-            const response = await fetch("http://oep-api.herokuapp.com/classes/upd",{
+            const response = await fetch(process.env.REACT_APP_API_URI + "/classes/upd",{
                 method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'authorization': "Bearer ".concat(Cookies.get("jwt"))
                 },
                 body: JSON.stringify({
-                    username: "abhishek",
-                    password: "abhishek",
                     updatedClass: this.state.class
                 })
             });

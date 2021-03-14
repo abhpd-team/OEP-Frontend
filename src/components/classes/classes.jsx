@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import stylesCSS from "./styles.module.css";
 
+import Cookies from "js-cookie";
+
 class Classes extends Component{
     constructor(props){
         super(props);
@@ -16,15 +18,20 @@ class Classes extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://oep-api.herokuapp.com/classes/get",{
+        const response = await fetch( process.env.REACT_APP_API_URI + "/classes/get",{
             method: "POST",
-            body: {
-                username: "abhishek",
-                password: "abhishek"
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': "Bearer ".concat(Cookies.get("jwt"))
             }
         });
 
         const data = await response.json();
+
+        if(data.message){ //if we dont get classes from server but got a message
+            console.log(data.message);
+            return;
+        }
 
         this.setState((state)=>{
             return { classes: data };
@@ -33,7 +40,10 @@ class Classes extends Component{
 
     async componentDidMount(){
         await this.fetchData();
-        this.setState({loading:false});
+        if(this.state.classes){
+            console.log(this.state.classes);
+            this.setState({loading:false});
+        }
     }
 
     async postNewClass(){
@@ -41,14 +51,13 @@ class Classes extends Component{
 
         document.getElementById("newClassInput").value = "";
 
-        const response = await fetch("http://oep-api.herokuapp.com/classes/new",{
+        const response = await fetch(process.env.REACT_APP_API_URI + "/classes/new",{
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'authorization': "Bearer ".concat(Cookies.get("jwt"))
             },
             body: JSON.stringify({
-                username: "abhishek",
-                password: "abhishek",
                 class: {
                     className: newClassName
                 }
@@ -63,14 +72,13 @@ class Classes extends Component{
     }
 
     async deleteClass(id){
-        const response = await fetch("http://oep-api.herokuapp.com/classes/del",{
+        const response = await fetch(process.env.REACT_APP_API_URI + "/classes/del",{
             method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'authorization': "Bearer ".concat(Cookies.get("jwt"))
             },
             body: JSON.stringify({
-                username: "abhishek",
-                password: "abhishek",
                 classId: id
             })
         });

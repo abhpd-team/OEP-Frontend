@@ -1,4 +1,5 @@
 import React from "react";
+import Cookies from "js-cookie";
 
 class Login extends React.Component{
     constructor(props){
@@ -19,9 +20,25 @@ class Login extends React.Component{
         });
     }
 
-    loginButtonHandler(){
+    async loginButtonHandler(){
         console.log(this.state.username);
         console.log(this.state.password);
+
+        const response = await fetch(process.env.REACT_APP_API_URI+"/login",{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: this.state.username,
+                password: this.state.password
+            })
+        });
+
+        const data = await response.json();
+
+        // console.log(data);
+        Cookies.set("jwt",data.jwt);
     }
 
     render(){
@@ -29,8 +46,8 @@ class Login extends React.Component{
             <div>
                 <h1>Login</h1>
                 <p>Username: </p><input type="text" name="" id="username" required onChange={this.formChange}/>
-                <p>Password: </p><input type="text" name="" id="password" required onChange={this.formChange}/>
-                <button onClick={this.loginButtonHandler}>Login</button>
+                <p>Password: </p><input type="password" name="" id="password" required onChange={this.formChange}/>
+                <button type="submit" onClick={this.loginButtonHandler}>Login</button>
             </div>
         );
     }

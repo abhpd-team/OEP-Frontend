@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import stylesCSS from "./styles.module.css";
 
+import Cookies from "js-cookie";
+
 class Classes extends Component{
     constructor(props){
         super(props);
@@ -14,11 +16,11 @@ class Classes extends Component{
 
     async fetchData(){
         
-        const response = await fetch("http://oep-api.herokuapp.com/questionbanks/get",{
+        const response = await fetch(process.env.REACT_APP_API_URI + "/questionbanks/get",{
             method: "POST",
-            body: {
-                username: "abhishek",
-                password: "abhishek"
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': "Bearer ".concat(Cookies.get("jwt"))
             }
         });
 

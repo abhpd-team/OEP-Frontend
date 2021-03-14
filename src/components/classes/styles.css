@@ -8,7 +8,12 @@
     text-align: center;
     margin: 50px;
 }
-
+ .form-control{
+    text-align: right;
+}
+ .btn-primary{
+    text-align: right;
+}
 .listBlock {
     /* background-color: burlywood; */
     height: auto;

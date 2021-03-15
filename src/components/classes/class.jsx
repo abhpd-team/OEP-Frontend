@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import stylesCSS from "./styles.module.css";
 
 import Cookies from "js-cookie";
+import xlsx from "xlsx";
 
 class Classes extends Component{
     constructor(props){
@@ -14,6 +15,8 @@ class Classes extends Component{
         this.fetchData = this.fetchData.bind(this);
         this.postNewCandidate = this.postNewCandidate.bind(this);
         this.delCandidate = this.delCandidate.bind(this);
+
+        this.inputExcel = this.inputExcel.bind(this);
     }
 
     async fetchData(){
@@ -142,6 +145,57 @@ class Classes extends Component{
         });
     }
 
+    //Importing xlsx to json
+    inputExcel(event){
+        let fileReader = new FileReader();
+        fileReader.readAsBinaryString(event.target.files[0]);
+        fileReader.onload = (event)=>{
+            let data = event.target.result;
+            let workbook = xlsx.read(data,{type:"binary"});
+            workbook.SheetNames.forEach(sheet => {
+                let rowObject = xlsx.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
+
+                if(!rowObject[0].id && !rowObject[0].name && !rowObject[0].email){
+                    console.log("invalid file format");
+                    return;
+                }
+
+                this.setState((state)=>{
+                    const newState = JSON.parse(JSON.stringify(state));
+
+                    rowObject.forEach( ele => {
+                        newState.class.candidates.push({
+                            candidateId: ele.id,
+                            candidateName: ele.name,
+                            candidateEmail: ele.email
+                        });
+                    });
+                    
+                    return newState;
+                },async ()=>{
+                    console.log(this.state.class);
+        
+                    const response = await fetch(process.env.REACT_APP_API_URI + "/classes/upd",{
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'authorization': "Bearer ".concat(Cookies.get("jwt"))
+                        },
+                        body: JSON.stringify({
+                            updatedClass: this.state.class
+                        })
+                    });
+        
+                    const data = await response.json();
+        
+                    console.log(data);
+        
+                    await this.fetchData();
+                });
+            });
+        }
+    }
+
 
     render(){
         return(
@@ -167,6 +221,10 @@ class Classes extends Component{
                             <input id="newCandidateName" type="text"/>
                             <input id="newCandidateEmail" type="text"/>
                             <button onClick={this.postNewCandidate}>Add new Candidate</button>
+                        </div>
+                        <p>Make sure you have the first row with column names as "id","name" and "email" </p>
+                        <div>
+                            <input type="file" id="input-excel" accept=".xls,.xlsx" onChange = {this.inputExcel} />
                         </div>
                     </div>
                 </div>

@@ -37,8 +37,13 @@ class Login extends React.Component{
 
         const data = await response.json();
 
-        // console.log(data);
-        Cookies.set("jwt",data.jwt);
+        if(data.message){
+            console.log(data.message);
+        }
+        else{
+            // console.log(data);
+            Cookies.set("jwt",data.jwt);
+        }
     }
 
     render(){

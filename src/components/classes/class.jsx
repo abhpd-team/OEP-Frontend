@@ -73,11 +73,21 @@ class Classes extends Component{
 
         this.setState((state)=>{
             const newState = JSON.parse(JSON.stringify(state));
-            newState.class.candidates.push({
-                candidateId: newCandidateId,
-                candidateName: newCandidateName,
-                candidateEmail: newCandidateEmail
+
+            var duplicate = false;
+
+            newState.class.candidates.forEach(ele=> {
+                if(newCandidateId === ele.candidateId){
+                    duplicate = true;
+                }
             })
+            if(!duplicate && newCandidateId !=="" && newCandidateName!=="" && newCandidateEmail!==""){
+                newState.class.candidates.push({
+                    candidateId: newCandidateId,
+                    candidateName: newCandidateName,
+                    candidateEmail: newCandidateEmail
+                })
+            }
             return newState;
         },async ()=>{
             console.log(this.state.class);
@@ -147,6 +157,7 @@ class Classes extends Component{
 
     //Importing xlsx to json
     inputExcel(event){
+        console.log(event.target.files[0]);
         let fileReader = new FileReader();
         fileReader.readAsBinaryString(event.target.files[0]);
         fileReader.onload = (event)=>{
@@ -162,13 +173,24 @@ class Classes extends Component{
 
                 this.setState((state)=>{
                     const newState = JSON.parse(JSON.stringify(state));
-
+                    
                     rowObject.forEach( ele => {
-                        newState.class.candidates.push({
-                            candidateId: ele.id,
-                            candidateName: ele.name,
-                            candidateEmail: ele.email
-                        });
+
+                        var duplicate = false;
+
+                        newState.class.candidates.forEach(cand => {
+                            if(String(ele.id) === cand.candidateId){
+                                duplicate = true;
+                            }
+                        })
+                        
+                        if(!duplicate && String(ele.id)!=="" && ele.name!=="" && ele.email!=="" ){
+                            newState.class.candidates.push({
+                                candidateId: String(ele.id),
+                                candidateName: ele.name,
+                                candidateEmail: ele.email
+                            });
+                        }
                     });
                     
                     return newState;

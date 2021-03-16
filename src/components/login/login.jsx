@@ -1,5 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie";
+import stylesCSS from "./styles.module.css";
+import logo from '../resources/BiggerLogo2.png';
 
 class Login extends React.Component{
     constructor(props){
@@ -43,11 +45,20 @@ class Login extends React.Component{
 
     render(){
         return (
-            <div>
-                <h1>Login</h1>
-                <p>Username: </p><input type="text" name="" id="username" required onChange={this.formChange}/>
-                <p>Password: </p><input type="password" name="" id="password" required onChange={this.formChange}/>
+            <div className={stylesCSS.login}>
+               <div className={stylesCSS.container}>
+               <form action="">   
+                <img className={stylesCSS.logo} src={logo} alt='logo'/>
+                <h1>Examiner Login</h1>
+                <div className={stylesCSS.txtfield}>
+                <input type="text" name="" placeholder="Username" id="username" required onChange={this.formChange}/>
+                </div>
+                <div className={stylesCSS.txtfield}>
+                <input type="password" name="" placeholder="Password" id="password" required onChange={this.formChange}/>
+                </div>
                 <button type="submit" onClick={this.loginButtonHandler}>Login</button>
+               </form>  
+               </div>
             </div>
         );
     }

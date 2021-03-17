@@ -56,7 +56,7 @@ class Login extends React.Component{
                 <div className={stylesCSS.txtfield}>
                 <input type="password" name="" placeholder="Password" id="password" required onChange={this.formChange}/>
                 </div>
-                <button type="submit" onClick={this.loginButtonHandler}>Login</button>
+                <button className={stylesCSS.button} type="submit" onClick={this.loginButtonHandler}>Login</button>
                </form>  
                </div>
             </div>

@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.login{
+.signup{
     min-height: 100vh;
     background: #eee;
     display: flex;
@@ -12,7 +12,7 @@
 }
 .container{
     margin: auto;
-    height: 500px;
+    height: 570px;
     width: 500px;
     max-width: 90%;
 }
@@ -29,11 +29,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .container form h1{
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     font-family: 'Poppins', sans-serif;    
     font-style: normal;
     font-weight: bold;
@@ -43,12 +43,12 @@
   }
 form .txtfield{
     /* position: relative; */
-    margin: 20px 20px 40px 45px ;
+    margin: 20px 20px 30px 50px ;
 }
 .txtfield input{
     width: 370px;
     padding: 0px 10px;
-    height: 50px;
+    height: 45px;
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;

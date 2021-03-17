@@ -1,4 +1,6 @@
 import React from "react";
+import stylesCSS from "./styles.module.css";
+import logo from '../resources/BiggerLogo2.png';
 
 class Signup extends React.Component{
     constructor(props){
@@ -46,13 +48,26 @@ class Signup extends React.Component{
 
     render(){
         return (
-            <div>
-                <h1>Signup</h1>
-                <p>Username: </p><input type="text" name="" id="username" required onChange={this.formChange}/>
-                <p>Email: </p><input type="text" name="" id="email" required onChange={this.formChange}/>
-                <p>Password: </p><input type="text" name="" id="password" required onChange={this.formChange}/>
-                <p>Repeat Password: </p><input type="text" name="" id="repeatpassword" required onChange={this.formChange}/>
-                <button onClick={this.signupButtonHandler}>Signup</button>
+            <div className={stylesCSS.signup}>
+                <div className={stylesCSS.container}>
+                <form action="">
+                <img className={stylesCSS.logo} src={logo} alt='logo'/>    
+                <h1>Examiner Signup</h1>
+                <div className={stylesCSS.txtfield}>
+                <input type="text" name="" placeholder="Username" id="username" required onChange={this.formChange}/>
+                </div>
+                <div className={stylesCSS.txtfield}>
+                <input type="text" name="" placeholder="Email" id="email" required onChange={this.formChange}/>
+                </div>
+                <div className={stylesCSS.txtfield}>
+                <input type="text" name="" placeholder="Password" id="password" required onChange={this.formChange}/>
+                </div>
+                <div className={stylesCSS.txtfield}>
+                <input type="text" name="" placeholder="Repeat Password" id="repeatpassword" required onChange={this.formChange}/>
+                </div>
+                <button className={stylesCSS.button} onClick={this.signupButtonHandler}>Signup</button>
+                </form>
+                </div>
             </div>
         );
     }

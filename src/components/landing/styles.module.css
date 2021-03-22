@@ -1,5 +1,35 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+.landing {
+  background-color: #eeeeee;
+}
+.smallLogo {
+}
+.welcome {
+}
+.bigLogo {
+}
+.button {
+  width: 200px;
+  height: 55px;
+  background: #848484;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+}
+.footer {
+  background-color: black;
+  padding: 20px;
+}
+.footer p {
+  background-color: black;
+  text-align: center;
+  color: white;
 }

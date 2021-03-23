@@ -8,25 +8,108 @@
 .landing {
   background-color: #eeeeee;
 }
+
 .smallLogo {
+  position: relative;
+  width: 7%;
+  margin-top: 40px;
+  margin-left: 170px;
 }
 .welcome {
+  position: absolute;
+  left: 900px;
+  margin-top: 50px;
+  margin-right: 250px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 45px;
 }
 .bigLogo {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 60%;
+}
+.motto {
+  position: relative;
+  padding: 5px;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.buttons {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
 }
 .button {
-  width: 200px;
-  height: 55px;
+  width: 160px;
+  height: 45px;
   background: #848484;
+  border-color: #848484;
+  color: white;
   border-radius: 10px;
+  margin: 5px;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
-  line-height: 37px;
 }
+.second {
+  background-color: white;
+}
+.second img {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  padding-top: 40px;
+  width: 15%;
+}
+.second h1 {
+  text-align: center;
+}
+.second p {
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.third img {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  padding-top: 40px;
+  width: 15%;
+}
+.third h1 {
+  text-align: center;
+}
+.third p {
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.fourth {
+  background-color: white;
+}
+.fourth h1 {
+  padding-top: 40px;
+  text-align: center;
+}
+
 .footer {
   background-color: black;
-  padding: 20px;
+  padding: 12px;
 }
 .footer p {
   background-color: black;

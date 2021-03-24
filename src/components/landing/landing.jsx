@@ -31,7 +31,7 @@ class Landing extends React.Component {
             <button className={stylesCSS.button}>signup</button>
           </a>
         </div>
-        <div className={stylesCSS.second}>
+        <div className={stylesCSS.secondcontainer}>
           <img src={handimage} alt="img" />
 
           <h1>Ease of Use</h1>
@@ -42,7 +42,7 @@ class Landing extends React.Component {
             concern.
           </p>
         </div>
-        <div className={stylesCSS.third}>
+        <div className={stylesCSS.thirdcontainer}>
           <img src={control} alt="img" />
 
           <h1>Control, all yours.</h1>
@@ -53,7 +53,7 @@ class Landing extends React.Component {
             student basis
           </p>
         </div>
-        <div className={stylesCSS.fourth}>
+        <div className={stylesCSS.fourthcontainer}>
           <h1 className="font-weight-bold">Other Features</h1>
           <div className="container">
             <div className="row">

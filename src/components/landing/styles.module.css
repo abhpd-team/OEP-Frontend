@@ -51,10 +51,10 @@
   font-weight: bold;
   font-size: 25px;
 }
-.second {
+.secondcontainer {
   background-color: white;
 }
-.second img {
+.secondcontainer img {
   position: relative;
   display: flex;
   margin-left: auto;
@@ -63,16 +63,16 @@
   padding-top: 40px;
   width: 15%;
 }
-.second h1 {
+.secondcontainer h1 {
   text-align: center;
 }
-.second p {
+.secondcontainer p {
   padding: 10px;
   text-align: center;
   padding-bottom: 40px;
 }
 
-.third img {
+.thirdcontainer img {
   position: relative;
   display: flex;
   margin-left: auto;
@@ -81,18 +81,18 @@
   padding-top: 40px;
   width: 15%;
 }
-.third h1 {
+.thirdcontainer h1 {
   text-align: center;
 }
-.third p {
+.thirdcontainer p {
   padding: 10px;
   text-align: center;
   padding-bottom: 40px;
 }
-.fourth {
+.fourthcontainer {
   background-color: white;
 }
-.fourth h1 {
+.fourthcontainer h1 {
   padding-top: 40px;
   text-align: center;
 }

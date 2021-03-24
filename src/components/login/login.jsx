@@ -46,7 +46,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className={stylesCSS.login}>
-        <div className={stylesCSS.container}>
+        <div className={stylesCSS.logincontainer}>
           <form action="">
             <img className={stylesCSS.logo} src={logo} alt="logo" />
             <h1>Examiner Login</h1>
@@ -71,7 +71,7 @@ class Login extends React.Component {
               />
             </div>
             <button
-              className={stylesCSS.button}
+              className={stylesCSS.loginbutton}
               onClick={this.loginButtonHandler}
             >
               Login

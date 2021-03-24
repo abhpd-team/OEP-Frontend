@@ -10,20 +10,10 @@
 }
 
 .smallLogo {
-  position: relative;
-  width: 7%;
-  margin-top: 40px;
-  margin-left: 170px;
+  size: 20px;
 }
 .welcome {
-  position: absolute;
-  left: 900px;
-  margin-top: 50px;
-  margin-right: 250px;
-  font-style: normal;
-  font-weight: normal;
   font-size: 30px;
-  line-height: 45px;
 }
 .bigLogo {
   position: relative;

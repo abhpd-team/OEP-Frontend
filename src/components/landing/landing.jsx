@@ -9,10 +9,20 @@ class Landing extends React.Component {
   render() {
     return (
       <div className={stylesCSS.landing}>
-        <img className={stylesCSS.smallLogo} src={smallLogo} alt="logo" />
-        <span className={stylesCSS.welcome}>Welcome!</span>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4  vertical-align-center mt-3">
+              <img src={smallLogo} alt="logo" />
+            </div>
+            <div
+              className={`col-md-4 offset-md-4  vertical-align-center mt-5 ${stylesCSS.welcome}`}
+            >
+              Welcome!
+            </div>
+          </div>
+        </div>
         <img className={stylesCSS.bigLogo} src={bigLogo} alt="logo" />
-        <p className={stylesCSS.motto}>Secure, Reliable & easy to use.</p>]
+        <p className={stylesCSS.motto}>Secure, Reliable & easy to use.</p>
         <div className={stylesCSS.buttons}>
           <a href="/login">
             <button className={stylesCSS.button}>login</button>

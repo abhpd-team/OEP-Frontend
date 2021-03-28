@@ -51,58 +51,72 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className={stylesCSS.signup}>
-        <div className={stylesCSS.signupcontainer}>
-          <form action="">
-            <img className={stylesCSS.logo} src={logo} alt="logo" />
-            <h1>Examiner Signup</h1>
-            <div className={stylesCSS.txtfield}>
-              <input
-                type="text"
-                name=""
-                placeholder="Username"
-                id="username"
-                required
-                onChange={this.formChange}
-              />
+      <div className="container text-center">
+        <div className="row">
+          <div className={`col-6 offset-3 mt-4 box ${stylesCSS.box}`}>
+            <div className="row m-2">
+              <div className="col-12 display-4">
+                <img className="img-fluid" src={logo} alt="logo" />
+              </div>
             </div>
-            <div className={stylesCSS.txtfield}>
-              <input
-                type="text"
-                name=""
-                placeholder="Email"
-                id="email"
-                required
-                onChange={this.formChange}
-              />
+            <div className="row my-4">
+              <div className={`col-12 header ${stylesCSS.header}`}>
+                Examination Signup
+              </div>
             </div>
-            <div className={stylesCSS.txtfield}>
-              <input
-                type="text"
-                name=""
-                placeholder="Password"
-                id="password"
-                required
-                onChange={this.formChange}
-              />
-            </div>
-            <div className={stylesCSS.txtfield}>
-              <input
-                type="text"
-                name=""
-                placeholder="Repeat Password"
-                id="repeatpassword"
-                required
-                onChange={this.formChange}
-              />
-            </div>
-            <button
-              className={stylesCSS.signupbutton}
-              onClick={this.signupButtonHandler}
-            >
-              Signup
-            </button>
-          </form>
+            <form className="mb-5">
+              <div className="row form-group">
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Username:"
+                  required
+                  onChange={this.formChange}
+                  className={`form-control col-6 offset-3 input-box ${stylesCSS.inputBox}`}
+                />
+              </div>
+              <div className="row form-group mt-4">
+                <input
+                  type="Email"
+                  placeholder="Email:"
+                  id="email"
+                  required
+                  onChange={this.formChange}
+                  className={`form-control col-6 offset-3 input-box ${stylesCSS.inputBox}`}
+                />
+              </div>
+              <div className="row form-group mt-4">
+                <input
+                  type="password"
+                  placeholder="Password:"
+                  id="password"
+                  required
+                  onChange={this.formChange}
+                  className={`form-control col-6 offset-3 input-box ${stylesCSS.inputBox}`}
+                />
+              </div>
+              <div className="row form-group mt-4">
+                <input
+                  type="password"
+                  placeholder="Repeat Password:"
+                  id="repeatPassword"
+                  required
+                  onChange={this.formChange}
+                  className={`form-control col-6 offset-3 input-box ${stylesCSS.inputBox}`}
+                />
+              </div>
+              <div className="row form-group my-4">
+                <div className="col-12">
+                  <button
+                    className={`btn-signup ${stylesCSS.btnSignup}`}
+                    onClick={this.signupButtonHandler}
+                  >
+                    Signup
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );

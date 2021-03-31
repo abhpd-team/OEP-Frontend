@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 import PageHeader from "./../modules/pageHeader/pageHeader";
 import SearchBar from "./../modules/searchBar/searchBar";
 import SmallCard from "./../modules/smallCard/smallCard";
+import AddNewCard from "./../modules/addNewCard/addNewCard";
 
 
 class Classes extends Component{
@@ -108,6 +109,9 @@ class Classes extends Component{
                     <SmallCard header="Class 11th B" footer="53 Candidates"/>
                     <SmallCard header="Class 11th B" footer="53 Candidates"/>
                     <SmallCard header="Class 11th B" footer="53 Candidates"/>
+                </div>
+                <div className={stylesCSS.addNewContainer}>
+                    <AddNewCard placeholder="New Class"/>
                 </div>
                 <h1 className={stylesCSS.classesHeading}>Classes</h1>
                 <div className={stylesCSS.listBlock}>

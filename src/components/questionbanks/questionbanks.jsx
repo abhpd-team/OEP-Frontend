@@ -4,6 +4,13 @@ import stylesCSS from "./styles.module.css";
 
 import Cookies from "js-cookie";
 
+// Importing components
+
+import PageHeader from "./../modules/pageHeader/pageHeader";
+import SearchBar from "./../modules/searchBar/searchBar";
+import SmallCard from "./../modules/smallCard/smallCard";
+import AddNewCard from "./../modules/addNewCard/addNewCard";
+
 class Classes extends Component{
     constructor(props){
         super(props);
@@ -39,7 +46,19 @@ class Classes extends Component{
     render(){
         return(
             <div>
-                <h1 className={stylesCSS.classesHeading}>Question Banks</h1>
+                <PageHeader header="Question Banks"/>
+                <SearchBar placeholder="Search for Question Bank"/>
+                <div className={stylesCSS.cardContainer}>
+                    <SmallCard header="Physics" footer="46 Questions"/>
+                    <SmallCard header="Chemistry" footer="53 Questions"/>
+                    <SmallCard header="History" footer="53 Questions"/>
+                    <SmallCard header="Biology" footer="53 Questions"/>
+                    <SmallCard header="Social Science" footer="53 Questions"/>
+                </div>
+                <div className={stylesCSS.addNewContainer}>
+                    <AddNewCard placeholder="New Bank"/>
+                </div>
+                {/* <h1 className={stylesCSS.classesHeading}>Question Banks</h1>
                 <div className={stylesCSS.listBlock}>
                     {this.state.loading?
                     "Loading, please wait ..."
@@ -52,7 +71,7 @@ class Classes extends Component{
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
 
                 {/* <div>
                     <button onClick={}> New Exam </button>

@@ -77,3 +77,9 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.addNewContainer {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}

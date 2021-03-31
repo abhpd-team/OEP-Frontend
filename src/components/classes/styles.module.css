@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #eeeeee;
 }
 
 .classesHeading {
@@ -61,4 +67,13 @@
 
     display: flex;
     justify-content: space-between;
+}
+
+/* New Design */
+
+.cardContainer {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

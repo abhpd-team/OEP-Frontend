@@ -1,0 +1,9 @@
+.pageHeader {
+    text-align: center;
+}
+
+.pageHeader h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 80px;
+    letter-spacing: -4px;
+}

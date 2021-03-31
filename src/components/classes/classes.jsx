@@ -4,6 +4,13 @@ import stylesCSS from "./styles.module.css";
 
 import Cookies from "js-cookie";
 
+// Importing components
+
+import PageHeader from "./../modules/pageHeader/pageHeader";
+import SearchBar from "./../modules/searchBar/searchBar";
+import SmallCard from "./../modules/smallCard/smallCard";
+
+
 class Classes extends Component{
     constructor(props){
         super(props);
@@ -93,6 +100,15 @@ class Classes extends Component{
     render(){
         return(
             <div>
+                <PageHeader header="Classes"/>
+                <SearchBar placeholder="Search for Class"/>
+                <div className={stylesCSS.cardContainer}>
+                    <SmallCard header="Class 12th A" footer="46 Candidates"/>
+                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
+                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
+                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
+                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
+                </div>
                 <h1 className={stylesCSS.classesHeading}>Classes</h1>
                 <div className={stylesCSS.listBlock}>
                     {this.state.loading?

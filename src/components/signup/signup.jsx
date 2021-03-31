@@ -18,14 +18,15 @@ class Signup extends React.Component {
 
   formChange() {
     this.setState({
-      username: document.getElementById("username").value,
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
-      repeatPassword: document.getElementById("repeatpassword").value,
+      username: (document.getElementById("username").value===null)?"":document.getElementById("username").value,
+      email: (document.getElementById("email").value===null)?"":document.getElementById("email").value,
+      password: (document.getElementById("password").value===null)?"":document.getElementById("password").value,
+      repeatPassword: (document.getElementById("repeatPassword").value===null)?"":document.getElementById("repeatPassword").value,
     });
   }
 
-  async signupButtonHandler() {
+  async signupButtonHandler(event) {
+    event.preventDefault();
     if (this.state.password === this.state.repeatPassword) {
       console.log(this.state.username);
       console.log(this.state.email);

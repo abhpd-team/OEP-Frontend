@@ -6,10 +6,10 @@ export default function AddNewCard (props){
             <h1>Add New</h1>
             <div className={stylesCSS.card}>
                 <div className={stylesCSS.inputArea}>
-                    <input className={stylesCSS.input} type="text" placeholder={props.placeholder}/>
+                    <input id={props.inputId} className={stylesCSS.input} type="text" placeholder={props.placeholder}/>
                 </div>
                 <div className={stylesCSS.buttonArea}>
-                    <button className={stylesCSS.addButton}>Add</button>
+                    <button className={stylesCSS.addButton} onClick={props.onClick}>Add</button>
                 </div>
             </div>
         </div>

@@ -79,23 +79,28 @@ class Classes extends Component{
         await this.fetchData();
     }
 
-    async deleteClass(id){
-        const response = await fetch(process.env.REACT_APP_API_URI + "/classes/del",{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': "Bearer ".concat(Cookies.get("jwt"))
-            },
-            body: JSON.stringify({
-                classId: id
-            })
-        });
+    async deleteClass(id, className){
+        
+        var confirm = window.confirm("Confirm to Delete the class: "+className);
 
-        const data = await response.json();
-
-        console.log(data);
-
-        await this.fetchData();
+        if(confirm){
+            const response = await fetch(process.env.REACT_APP_API_URI + "/classes/del",{
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': "Bearer ".concat(Cookies.get("jwt"))
+                },
+                body: JSON.stringify({
+                    classId: id
+                })
+            });
+    
+            const data = await response.json();
+    
+            console.log(data);
+    
+            await this.fetchData();
+        }
     }
 
     render(){
@@ -104,41 +109,18 @@ class Classes extends Component{
                 <PageHeader header="Classes"/>
                 <SearchBar placeholder="Search for Class"/>
                 <div className={stylesCSS.cardContainer}>
-                    <SmallCard header="Class 12th A" footer="46 Candidates"/>
-                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
-                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
-                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
-                    <SmallCard header="Class 11th B" footer="53 Candidates"/>
-                </div>
-                <div className={stylesCSS.addNewContainer}>
-                    <AddNewCard placeholder="New Class"/>
-                </div>
-                <h1 className={stylesCSS.classesHeading}>Classes</h1>
-                <div className={stylesCSS.listBlock}>
                     {this.state.loading?
                     "Loading, please wait ..."
                     : 
                     this.state.classes.map((e,indx)=>{
-                        // if(e===null){
-                        //     return <div></div>;
-                        // }
                         return (
-                            <div className={stylesCSS.listItem} key={indx}>
-                                <h2>{e.className}</h2>
-                                <a href={"/classes/"+e._id}><button><h4>Edit</h4></button></a>
-                                <button onClick={async ()=> await this.deleteClass(e._id)}><h4>--X--</h4></button>
-                            </div>
+                            <SmallCard key={indx} href={"/classes/"+e._id} header={e.className} footer="46 Candidates" deleteHandler={async ()=> await this.deleteClass(e._id, e.className)}/>
                         )
                     })}
-                    <div className={`${stylesCSS.newlistItem} ${stylesCSS.translucent}`}>
-                        <input id="newClassInput" type="text"/>
-                        <button onClick={this.postNewClass}>Create new Class</button>
-                    </div>
                 </div>
-
-                {/* <div>
-                    <button onClick={}> New Exam </button>
-                </div> */}
+                <div className={stylesCSS.addNewContainer}>
+                    <AddNewCard inputId="newClassInput" placeholder="New Class" onClick={this.postNewClass}/>
+                </div>
             </div>
         )
     }

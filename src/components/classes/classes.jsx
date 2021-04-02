@@ -38,6 +38,7 @@ class Classes extends Component{
 
         if(data.message){ //if we dont get classes from server but got a message
             console.log(data.message);
+            window.location.href = "/login";
             return;
         }
 
@@ -114,7 +115,7 @@ class Classes extends Component{
                     : 
                     this.state.classes.map((e,indx)=>{
                         return (
-                            <SmallCard key={indx} href={"/classes/"+e._id} header={e.className} footer="46 Candidates" deleteHandler={async ()=> await this.deleteClass(e._id, e.className)}/>
+                            <SmallCard key={indx} href={"/classes/"+e._id} header={e.className} footer={`${e.candidates.length} ${(e.candidates.length>1)?" candidates":" candidate"}`} deleteHandler={async ()=> await this.deleteClass(e._id, e.className)}/>
                         )
                     })}
                 </div>

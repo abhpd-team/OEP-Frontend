@@ -1,108 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: Poppins;
 }
-.landing {
-  background-color: #eeeeee;
+/* html,
+body {
+  background-color: #eee;
+} */
+.btncustom {
+  width: 80%;
+  width: 140px;
+  max-width: 120px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  border: none;
+  background-color: #747474;
+  font-weight: 700;
+  color: #fff;
 }
 
-.smallLogo {
-  size: 20px;
-}
+/* .bgGrey {
+  background-color: #eee;
+} */
 .welcome {
-  font-size: 30px;
+  font-size: 2 rem;
+  font-weight: light-bold;
 }
-.bigLogo {
-  position: relative;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  width: 60%;
+.customstrong {
+  font-size: 50px;
+  letter-spacing: -0.03em;
+  font-weight: 1000;
 }
-.motto {
-  position: relative;
-  padding: 5px;
-  text-align: center;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-}
-
-.buttons {
-  display: flex;
-  padding: 5px;
-  justify-content: center;
-  align-items: center;
-}
-.button {
-  width: 160px;
-  height: 45px;
-  background: #848484;
-  border-color: #848484;
-  color: white;
-  border-radius: 10px;
-  margin: 5px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 25px;
-}
-.secondcontainer {
-  background-color: white;
-}
-.secondcontainer img {
-  position: relative;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  padding-top: 40px;
-  width: 15%;
-}
-.secondcontainer h1 {
-  text-align: center;
-}
-.secondcontainer p {
-  padding: 10px;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.thirdcontainer img {
-  position: relative;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  padding-top: 40px;
-  width: 15%;
-}
-.thirdcontainer h1 {
-  text-align: center;
-}
-.thirdcontainer p {
-  padding: 10px;
-  text-align: center;
-  padding-bottom: 40px;
-}
-.fourthcontainer {
-  background-color: white;
-}
-.fourthcontainer h1 {
-  padding-top: 40px;
-  text-align: center;
-}
-
-.footer {
-  background-color: black;
-  padding: 12px;
-}
-.footer p {
-  background-color: black;
-  text-align: center;
-  color: white;
+h4 {
+  letter-spacing: -0.03em;
 }

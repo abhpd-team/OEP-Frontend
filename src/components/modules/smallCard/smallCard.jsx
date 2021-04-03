@@ -11,7 +11,7 @@ export default function SmallCard (props){
         <div className={stylesCSS.card}>
             <div className={stylesCSS.cardHeader}>
                 <div className={stylesCSS.deleteCard} onClick={props.deleteHandler}>
-                    <p className={stylesCSS.deleteCross}>╳</p>
+                    <p className={stylesCSS.deleteCross}><i className="fas fa-times"></i></p>
                 </div>
                 <a href={props.href}><h1>{props.header}</h1></a>
             </div>

@@ -25,9 +25,9 @@ export default function Navbar (props){
                 </div>
                 <div className={stylesCSS.navbarLinksContainer}>
                     <div className={stylesCSS.navbarLinks}>
-                        {navLinks.map((e)=>{
+                        {navLinks.map((e,indx)=>{
                             return (
-                                <div className={`${stylesCSS.navbarLink} ${(e.title===props.current)?`${stylesCSS.currentLink}`:``}`}>
+                                <div key={indx} className={`${stylesCSS.navbarLink} ${(e.title===props.current)?`${stylesCSS.currentLink}`:``}`}>
                                     <a href={e.href}>{`${e.title}`}</a>
                                 </div>
                             );

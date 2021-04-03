@@ -11,7 +11,7 @@ import Navbar from "./../modules/navbar/navbar";
 import Footer from "./../modules/footer/footer";
 import HeaderBar from "./../modules/headerBar/headerBar";
 
-class Classes extends Component{
+class Class extends Component{
     constructor(props){
         super(props);
 
@@ -239,7 +239,6 @@ class Classes extends Component{
                             <table className={stylesCSS.table}>
                                 <thead>
                                     <tr className={stylesCSS.tableRow}>
-                                        <th scope="col" width='40px'></th>
                                         <th scope="col">Id</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
@@ -250,11 +249,10 @@ class Classes extends Component{
                                     {this.state.class.candidates.map((e,indx)=>{
                                         return (
                                             <tr key={indx} className={`${stylesCSS.tableRow} ${stylesCSS.tableEntry}`}>
-                                                <td></td>
-                                                <td>{e.candidateId}</td>
-                                                <td>{e.candidateName}</td>
-                                                <td>{e.candidateEmail}</td>
-                                                <td><div className={stylesCSS.deleteButton} onClick={()=>this.delCandidate(e._id)}><p>delete</p></div></td>
+                                                <td className={stylesCSS.td}>{e.candidateId}</td>
+                                                <td className={stylesCSS.td}>{e.candidateName}</td>
+                                                <td className={stylesCSS.td}>{e.candidateEmail}</td>
+                                                <td className={stylesCSS.td}><div className={stylesCSS.deleteButton} onClick={()=>this.delCandidate(e._id)}><p>delete</p></div></td>
                                             </tr>
                                         )
                                     })}
@@ -294,4 +292,4 @@ class Classes extends Component{
     }
 }
 
-export default Classes;
+export default Class;

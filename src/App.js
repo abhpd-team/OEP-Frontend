@@ -28,7 +28,7 @@ function App() {
                         component={QuestionBanks}
                     />
                     <Route
-                        path="/questionbanks/:questionbankId"
+                        path="/questionbanks/:questionBankId"
                         exact
                         component={QuestionBank}
                     />

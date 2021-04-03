@@ -62,24 +62,26 @@ class Classes extends Component{
 
         document.getElementById("newClassInput").value = "";
 
-        const response = await fetch(process.env.REACT_APP_API_URI + "/classes/new",{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': "Bearer ".concat(Cookies.get("jwt"))
-            },
-            body: JSON.stringify({
-                class: {
-                    className: newClassName
-                }
-            })
-        });
+        if(newClassName!==""){
+            const response = await fetch(process.env.REACT_APP_API_URI + "/classes/new",{
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': "Bearer ".concat(Cookies.get("jwt"))
+                },
+                body: JSON.stringify({
+                    class: {
+                        className: newClassName
+                    }
+                })
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        console.log(data);
+            console.log(data);
 
-        await this.fetchData();
+            await this.fetchData();
+        }
     }
 
     async deleteClass(id, className){

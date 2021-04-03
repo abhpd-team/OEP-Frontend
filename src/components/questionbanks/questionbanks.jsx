@@ -61,24 +61,26 @@ class QuestionBanks extends Component{
 
         document.getElementById("newQuestionBankInput").value = "";
 
-        const response = await fetch(process.env.REACT_APP_API_URI + "/questionbanks/new",{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': "Bearer ".concat(Cookies.get("jwt"))
-            },
-            body: JSON.stringify({
-                questionBank: {
-                    questionBankName: newQuestionBankName
-                }
-            })
-        });
+        if(newQuestionBankName!==""){
+            const response = await fetch(process.env.REACT_APP_API_URI + "/questionbanks/new",{
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': "Bearer ".concat(Cookies.get("jwt"))
+                },
+                body: JSON.stringify({
+                    questionBank: {
+                        questionBankName: newQuestionBankName
+                    }
+                })
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        console.log(data);
+            console.log(data);
 
-        await this.fetchData();
+            await this.fetchData();
+        }
     }
 
     async deleteQuestionBank(id, questionBankName){

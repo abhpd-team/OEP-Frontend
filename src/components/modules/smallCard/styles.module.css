@@ -34,6 +34,11 @@ a {
 
     position: relative;
 }
+
+.cardHeader:active {
+    background-color: #838383;
+}
+
 .deleteCard {
     cursor: pointer;
     position: absolute;

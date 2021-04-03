@@ -35,13 +35,18 @@ body {
     margin: 0% 10%;
 }
 
-table {
+.table {
     margin: 8px 0px;
     width: 100%;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     border-collapse: collapse;
+}
+
+.td {
+    padding: 0px;
+    border: 1px solid #c4c4c4;
 }
 
 .tableRow {

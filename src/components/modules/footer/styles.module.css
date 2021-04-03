@@ -1,0 +1,12 @@
+.footerContainer {
+    background-color: black;
+    height: 60px;
+    display: grid;
+    place-items: center;
+}
+
+.footerTextContainer {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: lighter;
+}

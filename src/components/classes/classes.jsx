@@ -6,6 +6,8 @@ import Cookies from "js-cookie";
 
 // Importing components
 
+import Navbar from "./../modules/navbar/navbar";
+import Footer from "./../modules/footer/footer";
 import PageHeader from "./../modules/pageHeader/pageHeader";
 import SearchBar from "./../modules/searchBar/searchBar";
 import SmallCard from "./../modules/smallCard/smallCard";
@@ -107,6 +109,7 @@ class Classes extends Component{
     render(){
         return(
             <div>
+                <Navbar current="Classes"/>
                 <PageHeader header="Classes"/>
                 <SearchBar placeholder="Search for Class"/>
                 <div className={stylesCSS.cardContainer}>
@@ -122,6 +125,9 @@ class Classes extends Component{
                 <div className={stylesCSS.addNewContainer}>
                     <AddNewCard inputId="newClassInput" placeholder="New Class" onClick={this.postNewClass}/>
                 </div>
+                <footer className={stylesCSS.footerContainer}>
+                    <Footer/>
+                </footer>
             </div>
         )
     }

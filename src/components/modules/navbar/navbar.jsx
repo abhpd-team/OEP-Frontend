@@ -1,0 +1,40 @@
+import stylesCSS from "./styles.module.css";
+
+import logoMedium from "./../../resources/images/Logo-medium.png";
+
+export default function Navbar (props){
+    var navLinks = [
+        {
+            title: "Exams",
+            href: "/exams"
+        },
+        {
+            title: "Classes",
+            href: "/classes"
+        },
+        {
+            title: "Question Banks",
+            href: "/questionbanks"
+        }
+    ]
+    return (
+        <div className={stylesCSS.navbarContainer}>
+            <div className={stylesCSS.navbarItems}>
+                <div className={stylesCSS.navbarLogo}>
+                    <img src={logoMedium} alt="logo"/>
+                </div>
+                <div className={stylesCSS.navbarLinksContainer}>
+                    <div className={stylesCSS.navbarLinks}>
+                        {navLinks.map((e)=>{
+                            return (
+                                <div className={`${stylesCSS.navbarLink} ${(e.title===props.current)?`${stylesCSS.currentLink}`:``}`}>
+                                    <a href={e.href}>{`${e.title}`}</a>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

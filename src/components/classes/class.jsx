@@ -7,6 +7,8 @@ import xlsx from "xlsx";
 
 // Importing components
 
+import Navbar from "./../modules/navbar/navbar";
+import Footer from "./../modules/footer/footer";
 import HeaderBar from "./../modules/headerBar/headerBar";
 
 class Classes extends Component{
@@ -226,6 +228,7 @@ class Classes extends Component{
     render(){
         return(
             <div>
+                <Navbar current="Classes"/>
                 {this.state.loading?
                 <center>Loading..Please Wait.</center>
                 :
@@ -283,6 +286,9 @@ class Classes extends Component{
                     </div>
                 </div>
                 }
+                <footer className={stylesCSS.footerContainer}>
+                    <Footer/>
+                </footer>
             </div>
         )
     }

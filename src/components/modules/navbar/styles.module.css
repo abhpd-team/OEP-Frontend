@@ -1,0 +1,49 @@
+.navbarContainer {
+    padding: 30px 15%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+}
+.navbarItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navbarLogo img {
+    width: 70px;
+    height: 70px;
+    transition: ease-in-out 0.5s;
+}
+.navbarLogo img:hover {
+    transition: ease-in-out 0.5s;
+    transform: rotate(130deg);
+    width: 80px;
+    height: 80px;
+}
+.navbarLinksContainer {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+.navbarLinks {
+    font-family: "Poppins", sans-serif;
+    font-size: large;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    display: flex;
+    justify-content: flex-end;
+}
+.navbarLink {
+    margin: 0px 8px;
+    transition: ease-in-out 0.2s;
+}
+.navbarLink:hover {
+    transition: ease-in-out 0.2s;
+    transform: translateY(5px);
+}
+.currentLink {
+    font-weight: 700;
+    color: #c5b100;
+}

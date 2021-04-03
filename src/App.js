@@ -8,6 +8,7 @@ import Classes from "./components/classes/classes";
 import Class from "./components/classes/class";
 import Exams from "./components/exams/exams";
 import QuestionBanks from "./components/questionbanks/questionbanks";
+import QuestionBank from "./components/questionbanks/questionbank";
 
 require("dotenv").config();
 
@@ -25,6 +26,11 @@ function App() {
                         path="/questionbanks"
                         exact
                         component={QuestionBanks}
+                    />
+                    <Route
+                        path="/questionbanks/:questionbankId"
+                        exact
+                        component={QuestionBank}
                     />
                 </Switch>
             </div>

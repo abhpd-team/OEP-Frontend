@@ -12,3 +12,7 @@
     display: flex;
     justify-content: center;
 }
+
+.footerContainer {
+    margin-top: 50px;
+}

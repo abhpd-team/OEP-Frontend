@@ -225,52 +225,96 @@ class QuestionBank extends Component{
             workbook.SheetNames.forEach(sheet => {
                 let rowObject = xlsx.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
 
-                if(!rowObject[0].id && !rowObject[0].name && !rowObject[0].email){
+                if(!rowObject[0].question && !rowObject[0].marks && !rowObject[0].correct){
                     console.log("invalid file format");
                     return;
                 }
+
+                console.log(rowObject);
 
                 this.setState((state)=>{
                     const newState = JSON.parse(JSON.stringify(state));
                     
                     rowObject.forEach( ele => {
 
+                        var newQuestion = "";
+                        var newMarks = 1;
+                        var newCorrectOptionValue = "";
+                        var newOptions = [];
+
+                        for (const [key, value] of Object.entries(ele)) {
+                            if(key.split('_')[0]==="option"){
+                                newOptions.push({
+                                    value: value
+                                });
+                                continue;
+                            }
+        
+                            switch(key){
+                                case "question":
+                                    newQuestion = value;
+                                break;
+        
+                                case "marks":
+                                    newMarks = Number(value);
+                                break;
+        
+                                case "correct":
+                                    newCorrectOptionValue = value;
+                                break;
+                    
+                                default:
+                                    console.log("Invalid Input");
+                                break;
+                            }
+                        }
+        
+                        // console.log(newQuestion);
+                        // console.log(newMarks);
+                        // console.log(newCorrectOptionValue);
+                        // console.log(newOptions);
+
                         var duplicate = false;
 
-                        newState.class.candidates.forEach(cand => {
-                            if(String(ele.id) === cand.candidateId){
+                        newState.questionBank.questions.forEach(ele=> {
+                            if( newQuestion === ele.value){
                                 duplicate = true;
                             }
                         })
-                        
-                        if(!duplicate && String(ele.id)!=="" && ele.name!=="" && ele.email!=="" ){
-                            newState.class.candidates.push({
-                                candidateId: String(ele.id),
-                                candidateName: ele.name,
-                                candidateEmail: ele.email
-                            });
+
+                        var isValidOptionCorrect = (newOptions.find(option=> option.value===newCorrectOptionValue)!==undefined)?true:false;
+
+                        if(isValidOptionCorrect && !duplicate && newQuestion !=="" && newOptions[0].value!=="" && newCorrectOptionValue!=="" && newMarks>=0 ){
+                            console.log("Updated new state");
+                            newState.questionBank.questions.push({
+                                marks: newMarks,
+                                value: newQuestion,
+                                options: newOptions,
+                                correctOptionValue: newCorrectOptionValue,
+                            })
                         }
                     });
                     
                     return newState;
-                },async ()=>{
-                    console.log(this.state.class);
-        
-                    const response = await fetch(process.env.REACT_APP_API_URI + "/classes/upd",{
+
+                }, async ()=>{
+                    console.log(this.state.questionBank.questions);
+
+                    const response = await fetch(process.env.REACT_APP_API_URI + "/questionbanks/upd",{
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json',
                             'authorization': "Bearer ".concat(Cookies.get("jwt"))
                         },
                         body: JSON.stringify({
-                            updatedClass: this.state.class
+                            updatedQuestionBank: this.state.questionBank
                         })
                     });
-        
+
                     const data = await response.json();
-        
+
                     console.log(data);
-        
+
                     await this.fetchData();
                 });
             });
@@ -311,7 +355,7 @@ class QuestionBank extends Component{
                                                         <div className={stylesCSS.deleteButton} onClick={()=>this.delQuestion(e._id)}><p>delete</p></div>
                                                     </div>
                                                 </td>
-                                                <td className={stylesCSS.td}>{e.value}</td>
+                                                <td className={`${stylesCSS.td} ${stylesCSS.questionTD}`}>{e.value}</td>
                                                 <td className={stylesCSS.td}>
                                                     <table className={stylesCSS.table}>
                                                         <tbody>
@@ -364,7 +408,10 @@ class QuestionBank extends Component{
                                 </div>
                                 <div>
                                     <h2>Or Select a Spreadsheet</h2>
-                                    <p>Make sure you have the first row with column names as "id","name" and "email" </p>
+                                    <p>Make sure you have first row with these column name: <br/>
+                                        “question”,”marks”, “option”, ”option”, ”option”, ”correct”.<br/>
+                                        correct column should have a value identical to one of the option 
+                                    </p>
                                     <div>
                                         <input type="file" id="input-excel" accept=".xls,.xlsx" onChange = {this.inputExcel} />
                                     </div>

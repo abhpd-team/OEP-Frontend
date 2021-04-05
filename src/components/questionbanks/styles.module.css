@@ -46,6 +46,12 @@
     border: 1px solid #c4c4c4;
 }
 
+.questionTD {
+    width: 60%;
+    padding: 10px 10px;
+    word-wrap: normal;
+}
+
 .optionsTD {
     padding: 10px 5px;
 }

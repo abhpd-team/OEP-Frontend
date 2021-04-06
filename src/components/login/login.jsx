@@ -22,7 +22,8 @@ class Login extends React.Component {
     });
   }
 
-  async loginButtonHandler() {
+  async loginButtonHandler(event) {
+    event.preventDefault();
     console.log(this.state.username);
     console.log(this.state.password);
 

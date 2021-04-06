@@ -22,13 +22,14 @@
 .headBanner {
     text-align: center;
     height: 500px;
-    padding-bottom: 100px;
+    padding: 100px 0px;
 }
 .headBanner p {
     font-size: 2.2em;
 }
 
 .headBanner button {
+    cursor: pointer;
     font-family: "Poppins", sans-serif;
     font-size: 1em;
     font-weight: 700;

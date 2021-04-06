@@ -32,8 +32,8 @@ export default function Landing (props){
                         <h1>Ease of Use</h1>
                     </div>
                     <div className={stylesCSS.featureInfo}>
-                        <p>We know the stuggle of examiners who had to take online exams, therefore,<br/>
-                        we made this whole system with ease of use as our primary concern.</p>
+                        <p>We know the stuggle of examiners who had to take online exams<br/>
+                        therefore we made this whole system with ease of use as our primary concern.</p>
                     </div>
                 </div>
                 <div className={`${stylesCSS.featureContainer} ${stylesCSS.centerCard}`}>

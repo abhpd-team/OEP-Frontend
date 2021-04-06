@@ -1,6 +1,9 @@
 import React from "react";
 import Cookies from "js-cookie";
 
+import stylesCSS from "./styles.module.css";
+import BiggerLogo from "./../resources/images/Bigger-logo.png";
+
 class Login extends React.Component{
     constructor(props){
         super(props);
@@ -38,21 +41,28 @@ class Login extends React.Component{
         const data = await response.json();
 
         if(data.message){
-            console.log(data.message);
+            alert(data.message);
         }
         else{
             // console.log(data);
             Cookies.set("jwt",data.jwt);
+            window.location.href = "/exams";
         }
     }
 
     render(){
         return (
             <div>
-                <h1>Login</h1>
-                <p>Username: </p><input type="text" name="" id="username" required onChange={this.formChange}/>
-                <p>Password: </p><input type="password" name="" id="password" required onChange={this.formChange}/>
-                <button type="submit" onClick={this.loginButtonHandler}>Login</button>
+                <div className={stylesCSS.cardContainer}>
+                    <div className={stylesCSS.cardForm}>
+                        <img src={BiggerLogo} alt="logo"/>
+                        <h3>Examiner Login</h3>
+                        <input className={stylesCSS.input} type="text" name="" id="username" placeholder="Username" required onChange={this.formChange}/>
+                        <input className={stylesCSS.input} type="password" name="" id="password" placeholder="Password" required onChange={this.formChange}/>
+                        <a href="/signup">Create Account</a>
+                        <button className={stylesCSS.button} onClick={this.loginButtonHandler}>Login</button>
+                    </div>
+                </div>
             </div>
         );
     }

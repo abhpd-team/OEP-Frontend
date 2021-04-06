@@ -32,10 +32,8 @@
     outline: none;
 }
 
-.buttonArea {
-}
-
 .addButton {
+    cursor: pointer;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 

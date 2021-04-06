@@ -49,6 +49,7 @@ select {
     justify-content: center;
 }
 .addButton {
+    cursor: pointer;
     font-weight: 700;
 
     height: 40px;

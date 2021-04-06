@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Importing Components
+import Landing from "./components/landing/landing";
 import Login from "./components/login/login";
 import Signup from "./components/signup/signup";
 import Classes from "./components/classes/classes";
@@ -17,6 +18,7 @@ function App() {
         <Router>
             <div className="App">
                 <Switch>
+                    <Route path="/" exact component={Landing} />
                     <Route path="/login" exact component={Login} />
                     <Route path="/signup" exact component={Signup} />
                     <Route path="/exams" exact component={Exams} />

@@ -1,0 +1,121 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.card {
+    margin: 8px 0px;
+    font-family: "Poppins", sans-serif;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 1250px) {
+    .card {
+        width: 90%;
+    }
+}
+
+.cardColorTab {
+    width: 30px;
+    background-color: #ffe500;
+    border-radius: 10px 5px 5px 10px;
+}
+.cardContent {
+    width: 100%;
+    padding: 10px 20px 10px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cardHeadRow,
+.cardLinkRow,
+.cardButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cardHeadRow {
+    margin-bottom: 5px;
+}
+
+.cardHeadItem {
+    margin-right: 15px;
+}
+
+.cardHeadTitle {
+    letter-spacing: -0.8px;
+}
+
+.cardHeadDate {
+    letter-spacing: -0.3px;
+    color: #888888;
+}
+
+.cardLinkRow {
+    border-radius: 5px;
+    background-color: #eeeeee;
+}
+
+.cardLink {
+    padding: 5px 15px;
+}
+
+.cardLinkURLclass {
+    overflow: scroll;
+    width: 450px;
+}
+
+.cardLinkCopy {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+
+    height: 35px;
+
+    padding: 0px 10px;
+    background-color: #ffe500;
+    border-radius: 5px;
+}
+
+.cardLinkCopy p {
+    font-weight: 600;
+}
+.cardLinkCopy:hover {
+    color: white;
+    background-color: #838383;
+}
+.cardLinkCopy:active {
+    color: white;
+    background-color: #7e7100;
+}
+
+.button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+    margin: 0px 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #eeeeee;
+}
+.button:hover {
+    transform: scale(1.1);
+    background-color: #ffe500;
+}
+.delButton:hover {
+    background-color: #ff8888;
+}
+.button:focus {
+    outline: none;
+}
+.button:active {
+    color: white;
+    background-color: #838383;
+}

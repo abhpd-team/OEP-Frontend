@@ -1,42 +1,69 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.footerContainer {
+    margin-top: 50px;
 }
-
-.examHeading {
-    text-align: center;
-    margin: 50px;
-}
-
 .listBlock {
-    /* background-color: burlywood; */
-    height: auto;
-    width: 100%;
-
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-top: 6px;
-    padding-bottom: 6px;
 }
 
-.listItem {
-    background-color: lightgrey;
-    margin: 6px;
-    height: 100px;
-    width: 70%;
-    padding: 15px 30px;
-    border-radius: 8px;
-    border: solid 1px black;
-
-    transition: ease-in-out 0.3s;
+.addNewExamContainer {
+    font-family: "Poppins", sans-serif;
+    margin: 70px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.listItem:hover {
-    transition: ease-in-out 0.3s;
-    box-shadow: grey 0.1px 0.1px 15px;
-    transform: scale(1.01);
-    background-color: whitesmoke;
+.addNewExamContainer h1 {
+    letter-spacing: -1px;
+}
+
+.newExamInputContainer {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #c4c4c4;
+}
+
+.inputRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input,
+select {
+    margin: 5px;
+    height: 40px;
+    /* width: 200px; */
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: 0px;
+}
+.formText {
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addButton {
+    font-weight: 700;
+
+    height: 40px;
+    padding: 0px 15px;
+    width: fit-content;
+    margin: 4px;
+
+    border-width: 0px;
+    border-radius: 6px;
+    background-color: #ffe600;
+}
+.addButton:focus {
+    outline: none;
+}
+.addButton:active {
+    color: white;
+    background-color: #838383;
 }

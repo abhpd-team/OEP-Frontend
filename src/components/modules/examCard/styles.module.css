@@ -64,7 +64,8 @@ a {
 }
 
 .cardLinkURLclass {
-    overflow: scroll;
+    user-select: none;
+    overflow: hidden;
     width: 450px;
 }
 

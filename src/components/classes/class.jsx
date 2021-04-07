@@ -264,9 +264,9 @@ class Class extends Component{
                                     <div>
                                         <center>
                                             <div className={stylesCSS.addNewCandidateCard}>
-                                                <input className={stylesCSS.input} id="newCandidateId" type="text"/>
-                                                <input className={stylesCSS.input} id="newCandidateName" type="text"/>
-                                                <input className={stylesCSS.input} id="newCandidateEmail" type="text"/>
+                                                <input className={stylesCSS.input} placeholder="Unique Id" id="newCandidateId" type="text"/>
+                                                <input className={stylesCSS.input} placeholder="Full Name" id="newCandidateName" type="text"/>
+                                                <input className={stylesCSS.input} placeholder="Email" id="newCandidateEmail" type="text"/>
                                                 <button className={stylesCSS.addButton} onClick={this.postNewCandidate}>Add</button>
                                             </div>
                                         </center>

@@ -100,6 +100,7 @@ body {
 }
 
 .addButton {
+    cursor: pointer;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 
@@ -110,6 +111,9 @@ body {
     border-width: 0px;
     border-radius: 6px;
     background-color: #ffe600;
+}
+.addButton:hover {
+    background-color: #ddc700;
 }
 .addButton:focus {
     outline: none;

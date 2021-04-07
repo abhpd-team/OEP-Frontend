@@ -61,6 +61,9 @@ select {
     border-radius: 6px;
     background-color: #ffe600;
 }
+.addButton:hover {
+    background-color: #ddc700;
+}
 .addButton:focus {
     outline: none;
 }

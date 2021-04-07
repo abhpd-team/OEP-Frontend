@@ -105,12 +105,19 @@
     color: #d3ffe0;
 }
 
+.checkMark:hover {
+    color: #b8e4c4;
+}
+
 .checkMark:active {
     color: #838383;
 }
 
 .checkMarkChecked {
     color: #009a2e;
+}
+.checkMarkChecked:hover {
+    color: #007523;
 }
 
 .addNewOptionCardButtonRow {
@@ -136,6 +143,7 @@
 }
 .input:focus {
     outline: none;
+    border: 2px #838383 solid;
 }
 
 .addNewText {
@@ -171,6 +179,9 @@
     border-radius: 6px;
     background-color: #ffe600;
 }
+.addButton:hover {
+    background-color: #ddc700;
+}
 .addButton:focus {
     outline: none;
 }
@@ -183,7 +194,13 @@
     cursor: pointer;
     background-color: #ff8888;
 }
+.removeOption:hover {
+    background-color: #e07979;
+}
 .addOption {
     cursor: pointer;
     background-color: #d3ffe0;
+}
+.addOption:hover {
+    background-color: #b8e4c4;
 }

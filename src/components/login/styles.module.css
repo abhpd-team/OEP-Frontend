@@ -31,9 +31,11 @@
 }
 .cardForm a {
     margin: 5px 0px;
-    text-decoration: underline;
-    color: rgb(0, 0, 119);
+    color: #838383;
     font-size: small;
+}
+.cardForm a:hover {
+    color: black;
 }
 .input {
     font-family: "Poppins", sans-serif;
@@ -52,6 +54,7 @@
 }
 .input:focus {
     outline: none;
+    border: 2px #838383 solid;
 }
 .button {
     cursor: pointer;
@@ -65,6 +68,9 @@
     border-width: 0px;
     border-radius: 6px;
     background-color: #ffe600;
+}
+.button:hover {
+    background-color: #ddc700;
 }
 .button:focus {
     outline: none;

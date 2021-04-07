@@ -24,6 +24,9 @@
     border-radius: 10px;
     border-width: 0px;
 }
+.input:focus {
+    border: 2px #838383 solid;
+}
 .input::placeholder {
     text-align: center;
     color: #838383;
@@ -44,6 +47,9 @@
     border-width: 0px;
     border-radius: 8px;
     background-color: #c4c4c4;
+}
+.addButton:hover {
+    background-color: #adadad;
 }
 .addButton:focus {
     outline: none;

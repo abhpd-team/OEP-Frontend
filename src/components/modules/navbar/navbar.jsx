@@ -21,7 +21,7 @@ export default function Navbar (props){
         <div className={stylesCSS.navbarContainer}>
             <div className={stylesCSS.navbarItems}>
                 <div className={stylesCSS.navbarLogo}>
-                    <img src={logoMedium} alt="logo"/>
+                    <a href="/"><img src={logoMedium} alt="logo"/></a>
                 </div>
                 <div className={stylesCSS.navbarLinksContainer}>
                     <div className={stylesCSS.navbarLinks}>

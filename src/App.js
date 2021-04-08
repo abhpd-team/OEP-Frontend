@@ -8,6 +8,7 @@ import Signup from "./components/signup/signup";
 import Classes from "./components/classes/classes";
 import Class from "./components/classes/class";
 import Exams from "./components/exams/exams";
+import Exam from "./components/exams/exam";
 import QuestionBanks from "./components/questionbanks/questionbanks";
 import QuestionBank from "./components/questionbanks/questionbank";
 
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/login" exact component={Login} />
                     <Route path="/signup" exact component={Signup} />
                     <Route path="/exams" exact component={Exams} />
+                    <Route path="/exams/:examId" exact component={Exam} />
                     <Route path="/classes" exact component={Classes} />
                     <Route path="/classes/:classId" exact component={Class} />
                     <Route

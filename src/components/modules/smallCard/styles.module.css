@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap");
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    margin: 8px;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+
+    transition: ease-in-out 0.1s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: ease-in-out 0.1s;
+}
+
+.cardHeader {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1.1;
+
+    height: 100px;
+    background-color: #ffe600;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+
+.cardHeader:active {
+    background-color: #838383;
+}
+
+.deleteCard {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.deleteCross {
+    transition: ease-in-out 0.2s;
+    user-select: none;
+}
+.deleteCross:hover {
+    transform: scale(1.4);
+    color: rgb(255, 0, 0);
+    stroke-width: 3px;
+    transition: ease-in-out 0.2s;
+}
+.deleteCross:active {
+    transform: scale(1.1);
+    color: rgb(0, 0, 0);
+    stroke-width: 3px;
+    transition: ease-in-out 0.2s;
+}
+.cardFooter {
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

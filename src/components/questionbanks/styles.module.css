@@ -1,0 +1,206 @@
+/* New Design */
+
+.cardContainer {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.addNewContainer {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.footerContainer {
+    margin-top: 50px;
+}
+
+/* QuestionBank details */
+
+.questionBankDetails {
+    margin: 0% 10%;
+}
+
+.customColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.listBlock {
+    margin: 8px 0px;
+}
+
+.table {
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border-collapse: collapse;
+}
+
+.td {
+    padding: 0px;
+    border: 1px solid #c4c4c4;
+}
+
+.questionTD {
+    width: 60%;
+    padding: 10px 10px;
+    word-wrap: normal;
+}
+
+.optionsTD {
+    padding: 10px 5px;
+}
+
+.correctOptionTD {
+    color: #009a2e;
+}
+
+.tableRow {
+    height: 50px;
+    border: 1px solid #c4c4c4;
+}
+
+.tableEntry {
+    background-color: white;
+}
+
+.deleteButton {
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.addNewQuestionSection {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin: 100px 0px;
+}
+
+.addNewQuestionSection h2 {
+    letter-spacing: -1px;
+}
+
+.addNewQuestionCard {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    width: 100%;
+    padding: 4px 4px;
+    margin: 20px 0px 50px 0px;
+}
+
+.addNewQuestionCardRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkMark {
+    cursor: pointer;
+    color: #d3ffe0;
+}
+
+.checkMark:hover {
+    color: #b8e4c4;
+}
+
+.checkMark:active {
+    color: #838383;
+}
+
+.checkMarkChecked {
+    color: #009a2e;
+}
+.checkMarkChecked:hover {
+    color: #007523;
+}
+
+.addNewOptionCardButtonRow {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.input {
+    font-family: "Poppins", sans-serif;
+
+    margin: 4px 4px;
+    height: 40px;
+    width: 200px;
+
+    text-align: left;
+    padding-left: 10px;
+
+    border-radius: 6px;
+    border-width: 0px;
+}
+.input::placeholder {
+    color: #838383;
+}
+.input:focus {
+    outline: none;
+    border: 2px #838383 solid;
+}
+
+.addNewText {
+    display: grid;
+    place-items: center;
+    margin: 0px 10px;
+    width: 20px;
+}
+
+.questioninput {
+    width: 90%;
+}
+
+.marksinput {
+    width: 10%;
+}
+
+.optionsinput {
+    width: 100%;
+}
+
+.addButton {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+    height: 40px;
+    padding: 0px 15px;
+    width: fit-content;
+    margin: 4px;
+
+    border-width: 0px;
+    border-radius: 6px;
+    background-color: #ffe600;
+}
+.addButton:hover {
+    background-color: #ddc700;
+}
+.addButton:focus {
+    outline: none;
+}
+.addButton:active {
+    color: white;
+    background-color: #838383;
+}
+
+.removeOption {
+    cursor: pointer;
+    background-color: #ff8888;
+}
+.removeOption:hover {
+    background-color: #e07979;
+}
+.addOption {
+    cursor: pointer;
+    background-color: #d3ffe0;
+}
+.addOption:hover {
+    background-color: #b8e4c4;
+}

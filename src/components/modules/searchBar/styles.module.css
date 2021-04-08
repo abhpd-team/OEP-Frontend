@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+}
+.searchBar {
+    font-family: "Poppins", sans-serif;
+
+    margin: 20px;
+    height: 40px;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 0px;
+
+    background-color: #c4c4c4;
+}
+.searchBar::placeholder {
+    text-align: center;
+    color: #838383;
+}
+.searchBar:focus {
+    outline: none;
+}

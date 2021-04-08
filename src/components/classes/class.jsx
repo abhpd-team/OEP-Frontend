@@ -5,7 +5,13 @@ import stylesCSS from "./styles.module.css";
 import Cookies from "js-cookie";
 import xlsx from "xlsx";
 
-class Classes extends Component{
+// Importing components
+
+import Navbar from "./../modules/navbar/navbar";
+import Footer from "./../modules/footer/footer";
+import HeaderBar from "./../modules/headerBar/headerBar";
+
+class Class extends Component{
     constructor(props){
         super(props);
 
@@ -222,42 +228,68 @@ class Classes extends Component{
     render(){
         return(
             <div>
+                <Navbar current="Classes"/>
                 {this.state.loading?
-                "Loading..Please Wait."
+                <center>Loading..Please Wait.</center>
                 :
                 <div>
-                    <h1 className={stylesCSS.classesHeading}>{this.state.class.className}</h1>
-                    <div className={stylesCSS.listBlock}>
-                        {this.state.class.candidates.map((e,indx)=>{
-                            return (
-                                <div className={stylesCSS.listItem} key={indx}>
-                                    <h2>{e.candidateId}</h2>
-                                    <h2>{e.candidateName}</h2>
-                                    <h2>{e.candidateEmail}</h2>
-                                    <button onClick={()=>this.delCandidate(e._id)}>--X--</button>
+                    <div className={stylesCSS.classDetails}>
+                        <HeaderBar header={this.state.class.className} sideHeader={`${this.state.class.candidates.length} ${(this.state.class.candidates.length>1)?" candidates":" candidate"}`} backHref="/classes"/>
+                        <div className={stylesCSS.listBlock}>
+                            <table className={stylesCSS.table}>
+                                <thead>
+                                    <tr className={stylesCSS.tableRow}>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col" width='100px'></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.state.class.candidates.map((e,indx)=>{
+                                        return (
+                                            <tr key={indx} className={`${stylesCSS.tableRow} ${stylesCSS.tableEntry}`}>
+                                                <td className={stylesCSS.td}>{e.candidateId}</td>
+                                                <td className={stylesCSS.td}>{e.candidateName}</td>
+                                                <td className={stylesCSS.td}>{e.candidateEmail}</td>
+                                                <td className={stylesCSS.td}><div className={stylesCSS.deleteButton} onClick={()=>this.delCandidate(e._id)}><p>delete</p></div></td>
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </table>
+                            <div className={stylesCSS.addNewCandidateSection}>
+                                <div>
+                                    <h2>Add New Candidate</h2>
+                                    <div>
+                                        <center>
+                                            <div className={stylesCSS.addNewCandidateCard}>
+                                                <input className={stylesCSS.input} placeholder="Unique Id" id="newCandidateId" type="text"/>
+                                                <input className={stylesCSS.input} placeholder="Full Name" id="newCandidateName" type="text"/>
+                                                <input className={stylesCSS.input} placeholder="Email" id="newCandidateEmail" type="text"/>
+                                                <button className={stylesCSS.addButton} onClick={this.postNewCandidate}>Add</button>
+                                            </div>
+                                        </center>
+                                    </div>
                                 </div>
-                            )
-                        })}
-                        <div className={`${stylesCSS.newlistItem} ${stylesCSS.translucent}`}>
-                            <input id="newCandidateId" type="text"/>
-                            <input id="newCandidateName" type="text"/>
-                            <input id="newCandidateEmail" type="text"/>
-                            <button onClick={this.postNewCandidate}>Add new Candidate</button>
-                        </div>
-                        <p>Make sure you have the first row with column names as "id","name" and "email" </p>
-                        <div>
-                            <input type="file" id="input-excel" accept=".xls,.xlsx" onChange = {this.inputExcel} />
+                                <div>
+                                    <h2>Or Select a Spreadsheet</h2>
+                                    <p>Make sure you have the first row with column names as "id","name" and "email" </p>
+                                    <div>
+                                        <input type="file" id="input-excel" accept=".xls,.xlsx" onChange = {this.inputExcel} />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 }
-
-                {/* <div>
-                    <button onClick={}> New Exam </button>
-                </div> */}
+                <footer className={stylesCSS.footerContainer}>
+                    <Footer/>
+                </footer>
             </div>
         )
     }
 }
 
-export default Classes;
+export default Class;

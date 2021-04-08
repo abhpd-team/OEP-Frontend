@@ -1,0 +1,60 @@
+.addNewCard {
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -1.5px;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.inputArea {
+    background-color: #c4c4c4;
+    border-radius: 10px;
+}
+
+.input {
+    font-family: "Poppins", sans-serif;
+
+    margin: 15px;
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 0px;
+}
+.input:focus {
+    border: 2px #838383 solid;
+}
+.input::placeholder {
+    text-align: center;
+    color: #838383;
+}
+.input:focus {
+    outline: none;
+}
+
+.addButton {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+
+    border-width: 0px;
+    border-radius: 8px;
+    background-color: #c4c4c4;
+}
+.addButton:hover {
+    background-color: #adadad;
+}
+.addButton:focus {
+    outline: none;
+}
+.addButton:active {
+    color: white;
+    background-color: #838383;
+}

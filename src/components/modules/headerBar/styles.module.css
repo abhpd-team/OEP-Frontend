@@ -1,0 +1,61 @@
+.headerBarContainer {
+    padding: 0px 30px;
+
+    font-family: "Poppins", sans-serif;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffe600;
+    height: 70px;
+
+    border-radius: 10px;
+}
+
+.backButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.backButton {
+    height: 42px;
+    width: 42px;
+    background-color: black;
+    color: white;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    transition: ease-in-out 0.1s;
+}
+
+.backButton:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.1s;
+}
+
+.backButton:active {
+    transform: scale(1);
+    background-color: #838383;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.sideHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    letter-spacing: -0.5px;
+}

@@ -101,7 +101,7 @@ class Exams extends Component{
                         <HeaderBar backHref="/exams" header={this.state.exam.examName} sideHeader={`${this.appearedCount()} of ${this.state.exam.candidates.length} Appeared`}/>
                         
                         <div className={stylesCSS.cardLinkRow}>
-                            <div className={stylesCSS.cardLink}><p className={stylesCSS.cardLinkURLclass} id={this.state.exam._id}>{`www.oep/examlive/${this.state.examinerId}/${this.state.exam._id}`}</p></div>
+                            <div className={stylesCSS.cardLink}><p className={stylesCSS.cardLinkURLclass} id={this.state.exam._id}>{`https://dev-oep.herokuapp.com/examlive/${this.state.examinerId}/${this.state.exam._id}`}</p></div>
                             <div className={stylesCSS.cardLinkCopy} onClick={this.copyTextFromCardLinkURL}><p data-examid={this.state.exam._id}>Copy</p></div>
                         </div>
 

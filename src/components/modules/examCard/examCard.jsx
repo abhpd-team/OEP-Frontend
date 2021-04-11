@@ -27,7 +27,7 @@ export default function ExamCard (props){
                             </div>
                         </div>
                         <div className={stylesCSS.cardLinkRow}>
-                            <div className={stylesCSS.cardLink}><p className={stylesCSS.cardLinkURLclass} id={props.examId}>{`www.oep/examlive/${props.examinerId}/${props.examId}`}</p></div>
+                            <div className={stylesCSS.cardLink}><p className={stylesCSS.cardLinkURLclass} id={props.examId}>{`https://dev-oep.herokuapp.com/examlive/${props.examinerId}/${props.examId}`}</p></div>
                             <div className={stylesCSS.cardLinkCopy} onClick={copyTextFromCardLinkURL}><p data-examid={props.examId}>Copy</p></div>
                         </div>
                     </div>

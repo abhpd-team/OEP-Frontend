@@ -154,11 +154,7 @@
 }
 
 .questioninput {
-    width: 90%;
-}
-
-.marksinput {
-    width: 10%;
+    width: 100%;
 }
 
 .optionsinput {

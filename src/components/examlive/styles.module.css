@@ -1,0 +1,368 @@
+/* Candidate Login */
+.cardContainer {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardForm {
+    padding: 30px 80px;
+    height: auto;
+    width: auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px #c4c4c4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Poppins", sans-serif;
+}
+.cardForm img {
+    width: 250px;
+    height: auto;
+    margin: 20px;
+}
+.cardForm h3 {
+    margin-bottom: 20px;
+}
+.cardForm a {
+    margin: 5px 0px;
+    color: #838383;
+    font-size: small;
+}
+.cardForm a:hover {
+    color: black;
+}
+.input {
+    font-family: "Poppins", sans-serif;
+
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 0px;
+
+    background-color: #c4c4c4;
+}
+.input::placeholder {
+    text-align: center;
+    color: #838383;
+}
+.input:focus {
+    outline: none;
+    border: 2px #838383 solid;
+}
+.button {
+    cursor: pointer;
+    font-weight: 700;
+
+    height: 40px;
+    padding: 0px 20px;
+    width: fit-content;
+    margin: 10px 0px;
+
+    border-width: 0px;
+    border-radius: 6px;
+    background-color: #ffe600;
+}
+.button:hover {
+    background-color: #ddc700;
+}
+.button:focus {
+    outline: none;
+}
+.button:active {
+    color: white;
+    background-color: #838383;
+}
+/* end of candidate login */
+
+/* Exam Interface */
+.examPageContainer {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+.topBar {
+    width: 100%;
+    height: 10%;
+    background-color: #c4c4c4;
+
+    padding-right: 25px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.logoContainer {
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+}
+.logoContainer img {
+    height: 100%;
+    width: 100%;
+}
+
+.infoStack {
+    margin: 0px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    line-height: 1.1;
+}
+.infoName {
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #838383;
+}
+
+.colorGrey {
+    color: #838383;
+}
+
+.darkgreen {
+    color: #009a2e;
+}
+.darkviolet {
+    color: #3a4eff;
+}
+.darkred {
+    color: #d72323;
+}
+
+.buttonSubmit {
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.questionsAttemptDetails {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: 90%;
+}
+.questionIndexList {
+    width: 70px;
+    max-height: 100%;
+    overflow-y: scroll;
+    background-color: #c4c4c4;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+.questionIndexList::-webkit-scrollbar {
+    /* WebKit */
+    width: 0px;
+}
+.questionIndex {
+    cursor: pointer;
+    user-select: none;
+
+    font-size: 1.1em;
+    font-weight: 800;
+
+    margin: 1px;
+    width: 68px;
+    height: 68px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.questionIndex:hover {
+    border: 2px black solid;
+}
+.questionIndex:active {
+    background-color: #7b721c;
+}
+
+.lightViolet {
+    background-color: #99a3ff;
+}
+
+.lightGreen {
+    background-color: #d3ffe0;
+}
+
+.lightRed {
+    background-color: #ff8888;
+}
+.yellow {
+    background-color: #ffe600;
+}
+
+/* Question Container */
+
+.questionContainer {
+    height: 100%;
+    width: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: scroll;
+}
+
+.quesitonResponseCardContainer {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;
+}
+
+.quesitonResponseCard {
+    height: 100%;
+    width: 100%;
+    background-color: #dfdede;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.quesitonResponseCard_question {
+    margin: 30px 0px 10px 20px;
+}
+
+.quesitonResponseCard_options {
+    margin: 20px;
+}
+
+.quesitonResponseCard_options p {
+    font-weight: 700;
+    margin: 0px 10px;
+}
+
+.quesitonResponseCard_option {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.quesitonResponseCard_option i {
+    margin: 10px 10px;
+}
+.checkMark {
+    cursor: pointer;
+    color: #d3ffe0;
+}
+
+.checkMark:hover {
+    color: #b8e4c4;
+}
+
+.checkMark:active {
+    color: #838383;
+}
+
+.checkMarkChecked {
+    color: #009a2e;
+}
+.checkMarkChecked:hover {
+    color: #007523;
+}
+
+.quesitonResponseCard_buttons {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.quesitonResponseCard_buttons button {
+    margin: 10px;
+}
+
+.confirmButton {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+
+    height: 50px;
+    padding: 0px 20px;
+    width: fit-content;
+    margin: 4px;
+
+    border-width: 0px;
+    border-radius: 6px;
+    background-color: #ffe600;
+}
+.confirmButton:hover {
+    background-color: #ddc700;
+}
+.confirmButton:focus {
+    outline: none;
+}
+.confirmButton:active {
+    color: white;
+    background-color: #838383;
+}
+
+/* end of exam Interface */
+
+/* Result page */
+.resultPage {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+.reportContainer {
+    margin: 80px;
+}
+.reportContainer img {
+    height: auto;
+    width: 300px;
+}
+.reportDate {
+    margin: 0px 20px;
+}
+.displayAsRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.displayAsRow * {
+    margin: 0px 5px;
+}
+.candidateInfo {
+    margin: 40px 20px;
+}
+.infograph td {
+    padding: 10px;
+}
+.infoBarContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.infoBar {
+    margin: 0px 10px;
+    height: 20px;
+    background-color: black;
+}
+.examinerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

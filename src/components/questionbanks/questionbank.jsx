@@ -105,7 +105,6 @@ class QuestionBank extends Component{
 
     async newQuestionStateUpdate(event){
         var newQuestion = document.getElementById("newQuestion").value;
-        var newMarks = Number(document.getElementById("newMarks").value)||this.state.newQuestion.marks;
         var newOptions = Array.from(document.getElementsByClassName("newOption")).map(ele => ele.value);
 
         this.setState((state)=>{
@@ -113,7 +112,7 @@ class QuestionBank extends Component{
             
             newState.newQuestion = {
                 value: newQuestion,
-                marks: newMarks,
+                marks: 1,
                 options: newOptions,
                 correctOptionIndx: state.newQuestion.correctOptionIndx
             }
@@ -256,7 +255,7 @@ class QuestionBank extends Component{
                                 break;
         
                                 case "marks":
-                                    newMarks = Number(value);
+                                    newMarks = 1;
                                 break;
         
                                 case "correct":
@@ -379,7 +378,6 @@ class QuestionBank extends Component{
                                         <div className={stylesCSS.addNewQuestionCard}>
                                             <div className={stylesCSS.addNewQuestionCardRow}>
                                                 <input onChange={this.newQuestionStateUpdate} placeholder="Question" className={`${stylesCSS.input} ${stylesCSS.questioninput}`} id="newQuestion" type="text"/>
-                                                <input onChange={this.newQuestionStateUpdate} placeholder="1 (Marks)" className={`${stylesCSS.input} ${stylesCSS.marksinput}`} id="newMarks" type="text"/>
                                             </div>
                                             {
                                                 this.state.newQuestion.options.map((option, indx)=>{
@@ -409,7 +407,7 @@ class QuestionBank extends Component{
                                 <div>
                                     <h2>Or Select a Spreadsheet</h2>
                                     <p>Make sure you have first row with these column name: <br/>
-                                        “question”,”marks”, “option”, ”option”, ”option”, ”correct”.<br/>
+                                        “question”, “option_1”, ”option_2”, ”option_3”, ... , ”correct”.<br/>
                                         correct column should have a value identical to one of the option 
                                     </p>
                                     <div>

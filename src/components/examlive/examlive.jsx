@@ -362,31 +362,48 @@ class ExamLive extends Component{
                             </div>
                         </div>
                         <div className={stylesCSS.infograph}>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td><p><b>Attempts</b></p></td>
-                                        <td>
-                                            <div className={stylesCSS.infoBar}></div>
-                                            <p><b>{this.state.responses.length}</b></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><p><b>Correct</b></p></td>
-                                        <td>
-                                            <div className={stylesCSS.infoBar}></div>
-                                            <p><b>{this.state.result.Marks}</b></p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><p><b>Wrong</b></p></td>
-                                        <td>
-                                            <div className={stylesCSS.infoBar}></div>
-                                            <p><b>{this.state.responses.length-this.state.result.Marks}</b></p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>                     
+                            <center>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><p><b>Total</b></p></td>
+                                            <td>
+                                                <div className={stylesCSS.infoBarContainer}>
+                                                    <div className={stylesCSS.infoBar} style={{width: (this.state.questionBank.questions.length)*5 + 'px'}}></div>
+                                                    <p><b>{this.state.questionBank.questions.length}</b></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>Attempts</b></p></td>
+                                            <td>
+                                                <div className={stylesCSS.infoBarContainer}>
+                                                    <div className={stylesCSS.infoBar} style={{width: (this.state.responses.length)*5 + 'px'}}></div>
+                                                    <p><b>{this.state.responses.length}</b></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>Correct</b></p></td>
+                                            <td>
+                                                <div className={stylesCSS.infoBarContainer}>
+                                                    <div className={stylesCSS.infoBar} style={{width: (this.state.result.Marks)*5+'px'}}></div>
+                                                    <p><b>{this.state.result.Marks}</b></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>Wrong</b></p></td>
+                                            <td>
+                                                <div className={stylesCSS.infoBarContainer}>
+                                                    <div className={stylesCSS.infoBar} style={{width: (this.state.responses.length - this.state.result.Marks)*5 +'px'}}></div>
+                                                    <p><b>{this.state.responses.length-this.state.result.Marks}</b></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                     
+                            </center>
                         </div>
                         <div className={stylesCSS.examinerInfo}>
                             <div className={stylesCSS.displayAsRow}>

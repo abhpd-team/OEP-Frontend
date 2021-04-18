@@ -350,6 +350,17 @@
 .infograph td {
     padding: 10px;
 }
+.infoBarContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.infoBar {
+    margin: 0px 10px;
+    height: 20px;
+    background-color: black;
+}
 .examinerInfo {
     display: flex;
     flex-direction: column;

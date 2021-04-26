@@ -1,6 +1,6 @@
 # Contributions to FRONTEND
 
-If you haven't already we strongly suggest you to read README.md before continuing to undestand about the project and for initial installation of the project on your local machine.
+If you haven't already we strongly suggest you to read [README.md](https://github.com/abhpd-team/OEP-Frontend/blob/main/README.md) before continuing to undestand about the project and for initial installation of the project on your local machine.
 
 ## For Beginners
 

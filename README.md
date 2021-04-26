@@ -49,7 +49,7 @@ npm start
 
 ## Contributing
 
-We're eagerly looking for contributors, Even if you're a **Graphics Designer** a **beginner or a pro at open source you're most welcome** ( Please read CONTRIBUTING.md for a much detailed workflow guide of how we manage contributions and releases )
+We're eagerly looking for contributors, Even if you're a **Graphics Designer** a **beginner or a pro at open source you're most welcome** ( Please read [CONTRIBUTING.md](https://github.com/abhpd-team/OEP-Frontend/blob/main/CONTRIBUTING.md) for a much detailed workflow guide of how we manage contributions and releases )
 Pull requests and new bug findings are more than welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 > We're also looking for Maintainers who have maintained an open source project before for their experience or someone who can help us with code reviews and helping others to contribute to our vision for the project.

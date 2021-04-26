@@ -6,6 +6,8 @@
 
 Online Exam Portal is 🔖 a easy-to-use Platform for MCQ-based tests/exams. Helping 👩🏻‍🏫 teachers by making it easier for them to take online tests and having access to a reliable platform for free.
 
+🦠 Due to the recent COVID-19 pandemic, students and teachers have to study and teach through online medium, we believe that this project will be helpful for many teachers and students. Even if it helps only a few teacher and students that will be a win for us and a great way to help the world in pandemic through our code.
+
 This is a [react](https://reactjs.org/) based frontend created with [create-react-app](https://github.com/facebook/create-react-app). Special ❤️ Thanks to all the contributors on all the dependencies for making this project possible.
 
 ## Installation
@@ -50,7 +52,7 @@ npm start
 We're eagerly looking for contributors, Even if you're a **Graphics Designer** a **beginner or a pro at open source you're most welcome** ( Please read CONTRIBUTING.md for a much detailed workflow guide of how we manage contributions and releases )
 Pull requests and new bug findings are more than welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-> We're also looking for Maintainers who can help us with code reviews and helping others to contribute to our vision for the project.
+> We're also looking for Maintainers who have maintained an open source project before for their experience or someone who can help us with code reviews and helping others to contribute to our vision for the project.
 
 Though we strongly recommend to use the product first to get a feel of our goals and to really undestand what we're trying achieve.
 
@@ -87,6 +89,10 @@ There is no order/priority for the mentioned points
 **6. API documentation**
 
 > We want to make sure that it is easy for the frontend developers to be able to understand the API calls and system so that it will be easier for them to implement a new functionality or alter some. A documentation for the API makes it a lot easier and quicker.
+
+**7. DevOPS ( Testing + CI + CD )**
+
+> There is no Testing or CI/CD currently but as the size of the project grows this will become a big need for the project. Anyone experienced with testing and CI+CD please consider this over all.
 
 ## License
 

@@ -4,6 +4,10 @@
 
 [oeportal.herokuapp.com](https://oeportal.herokuapp.com/)
 
+**Frontend Repository:** [https://github.com/abhpd-team/OEP-Frontend](https://github.com/abhpd-team/OEP-Frontend)
+
+**Backend Repository:** [https://github.com/abhpd-team/OEP-API](https://github.com/abhpd-team/OEP-API)
+
 Online Exam Portal is 🔖 a easy-to-use Platform for MCQ-based tests/exams. Helping 👩🏻‍🏫 teachers by making it easier for them to take online tests and having access to a reliable platform for free.
 
 🦠 Due to the recent COVID-19 pandemic, students and teachers have to study and teach through online medium, we believe that this project will be helpful for many teachers and students. Even if it helps only a few teacher and students that will be a win for us and a great way to help the world in pandemic through our code.

@@ -40,6 +40,7 @@ class Classes extends Component{
 
         if(data.message){ //if we dont get classes from server but got a message
             console.log(data.message);
+            alert("Please Login to continue");
             window.location.href = "/login";
             return;
         }

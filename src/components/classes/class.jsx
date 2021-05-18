@@ -91,9 +91,9 @@ class Class extends Component{
             }
             if(!duplicate && newCandidateId !=="" && newCandidateName!=="" && newCandidateEmail!==""){
                 newState.class.candidates.push({
-                    candidateId: newCandidateId,
-                    candidateName: newCandidateName,
-                    candidateEmail: newCandidateEmail
+                    candidateId: newCandidateId.trim(),
+                    candidateName: newCandidateName.trim(),
+                    candidateEmail: newCandidateEmail.trim()
                 })
                 document.getElementById("newCandidateId").value="";
                 document.getElementById("newCandidateName").value="";

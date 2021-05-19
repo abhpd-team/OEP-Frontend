@@ -69,9 +69,7 @@ class Class extends Component{
         const newCandidateName = document.getElementById("newCandidateName").value;
         const newCandidateEmail = document.getElementById("newCandidateEmail").value;
 
-        document.getElementById("newCandidateId").value="";
-        document.getElementById("newCandidateName").value="";
-        document.getElementById("newCandidateEmail").value="";
+        
 
         console.log(newCandidateId);
         console.log(newCandidateName);
@@ -87,15 +85,22 @@ class Class extends Component{
                     duplicate = true;
                 }
             })
+            if (newCandidateId.trim() === "" || newCandidateEmail.trim() === "" || newCandidateEmail.trim() === ""){
+                alert('Please provide valid non-empty inputs');
+                return newState;
+            }
             if (duplicate) {
                 alert('Please enter unique Candidate Id and Email');
             }
             if(!duplicate && newCandidateId !=="" && newCandidateName!=="" && newCandidateEmail!==""){
                 newState.class.candidates.push({
-                    candidateId: newCandidateId,
-                    candidateName: newCandidateName,
-                    candidateEmail: newCandidateEmail
+                    candidateId: newCandidateId.trim(),
+                    candidateName: newCandidateName.trim(),
+                    candidateEmail: newCandidateEmail.trim()
                 })
+                document.getElementById("newCandidateId").value="";
+                document.getElementById("newCandidateName").value="";
+                document.getElementById("newCandidateEmail").value="";
             }
             return newState;
         },async ()=>{

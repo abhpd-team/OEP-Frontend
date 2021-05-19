@@ -80,13 +80,16 @@ class Class extends Component{
         this.setState((state)=>{
             const newState = JSON.parse(JSON.stringify(state));
 
-            var duplicate = false;
+            let duplicate = false;
 
             newState.class.candidates.forEach(ele=> {
-                if(newCandidateId === ele.candidateId){
+                if(newCandidateId === ele.candidateId || newCandidateEmail === ele.candidateEmail){
                     duplicate = true;
                 }
             })
+            if (duplicate) {
+                alert('Please enter unique Candidate Id and Email');
+            }
             if(!duplicate && newCandidateId !=="" && newCandidateName!=="" && newCandidateEmail!==""){
                 newState.class.candidates.push({
                     candidateId: newCandidateId,

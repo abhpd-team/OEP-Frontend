@@ -1,4 +1,4 @@
-.centerCard {
+/* .centerCard {
     padding: 50px;
     height: auto;
     display: flex;
@@ -107,4 +107,12 @@
 }
 .developer a:hover {
     color: blue;
+} */
+
+.bannerText {
+  font-size: 3.5vw;
+}
+
+.bannerHeading {
+  font-size: 5vw;
 }

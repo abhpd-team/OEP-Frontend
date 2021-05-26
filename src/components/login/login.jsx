@@ -16,6 +16,12 @@ class Login extends React.Component{
         this.loginButtonHandler = this.loginButtonHandler.bind(this);
     }
 
+    componentDidMount(){
+        if(Cookies.get("jwt")!==undefined){
+            window.location.href = "/exams";
+        }
+    }
+
     formChange(){
         this.setState({
             username: document.getElementById("username").value,

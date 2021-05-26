@@ -1,6 +1,13 @@
 import stylesCSS from "./styles.module.css";
+import Cookies from "js-cookie";
 
 import logoMedium from "./../../resources/images/Logo-medium.png";
+
+function logoutHandler(){
+    Cookies.remove("jwt");
+    alert("You have been successfully logged out.");
+    window.location.href = "/login";
+}
 
 export default function Navbar (props){
     var navLinks = [
@@ -32,6 +39,9 @@ export default function Navbar (props){
                                 </div>
                             );
                         })}
+                        <div className={`${stylesCSS.navbarLink} ${stylesCSS.navbarLogout}`}>
+                            <div onClick={logoutHandler}>{`Logout`}</div>
+                        </div>
                     </div>
                 </div>
             </div>

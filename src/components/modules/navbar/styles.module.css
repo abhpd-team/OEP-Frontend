@@ -38,6 +38,7 @@
 .navbarLink {
     margin: 0px 8px;
     transition: ease-in-out 0.2s;
+    cursor: pointer;
 }
 .navbarLink:hover {
     transition: ease-in-out 0.2s;
@@ -46,4 +47,7 @@
 .currentLink {
     font-weight: 700;
     color: #c5b100;
+}
+.navbarLogout {
+    color: #838383;
 }

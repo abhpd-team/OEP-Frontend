@@ -1,4 +1,5 @@
 import React from "react";
+import Cookies from "js-cookie";
 
 import stylesCSS from "./styles.module.css";
 import BiggerLogo from "./../resources/images/Bigger-logo.png";
@@ -15,6 +16,12 @@ class Signup extends React.Component{
         }
         this.formChange = this.formChange.bind(this);
         this.signupButtonHandler = this.signupButtonHandler.bind(this);
+    }
+
+    componentDidMount(){
+        if(Cookies.get("jwt")!==undefined){
+            window.location.href = "/exams";
+        }
     }
 
     formChange(){

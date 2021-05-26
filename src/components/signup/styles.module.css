@@ -1,4 +1,4 @@
-.cardContainer {
+/* .cardContainer {
     height: 100vh;
     width: 100%;
 
@@ -78,4 +78,40 @@
 .button:active {
     color: white;
     background-color: #838383;
+} */
+.input {
+  font-family: "Poppins", sans-serif;
+
+  text-align: center;
+  border-radius: 10px;
+  border-width: 0px;
+
+  background-color: #c4c4c4;
+}
+.button {
+  cursor: pointer;
+  font-weight: 700;
+
+  height: 40px;
+  padding: 0px 20px;
+  width: fit-content;
+  margin: 10px 0px;
+
+  border-width: 0px;
+  border-radius: 6px;
+  background-color: #ffe600;
+}
+.button:hover {
+  background-color: #ddc700;
+}
+.button:focus {
+  outline: none;
+}
+.button:active {
+  color: white;
+  background-color: #838383;
+}
+
+.rounded {
+  border-radius: 10px;
 }

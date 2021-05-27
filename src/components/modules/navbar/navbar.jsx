@@ -24,6 +24,14 @@ export default function Navbar (props){
             href: "/questionbanks"
         }
     ]
+
+    var logoutOption=<div></div>;
+    
+    if(Cookies.get("jwt")){
+        logoutOption = <div className={`${stylesCSS.navbarLink} ${stylesCSS.navbarLogout}`}>
+            <div onClick={logoutHandler}>{`Logout`}</div>
+        </div>
+    }
     return (
         <div className={stylesCSS.navbarContainer}>
             <div className={stylesCSS.navbarItems}>
@@ -39,9 +47,7 @@ export default function Navbar (props){
                                 </div>
                             );
                         })}
-                        <div className={`${stylesCSS.navbarLink} ${stylesCSS.navbarLogout}`}>
-                            <div onClick={logoutHandler}>{`Logout`}</div>
-                        </div>
+                        {logoutOption}
                     </div>
                 </div>
             </div>

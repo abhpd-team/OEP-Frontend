@@ -53,7 +53,8 @@
   text-align: center;
   border-radius: 10px;
   border-width: 0px;
-
+  font-size: small;
+  height: 40px;
   background-color: #c4c4c4;
 }
 .button {
@@ -80,6 +81,28 @@
   background-color: #838383;
 }
 
-.rounded {
-  border-radius: 10px;
+a {
+  font-size: small;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.border {
+  border-radius: 20px;
+}
+
+html {
+  background-color: #eee;
+}
+
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    background-color: white !important;
+  }
+  .border {
+    box-shadow: none !important;
+  }
 }

@@ -110,9 +110,50 @@
 } */
 
 .bannerText {
-  font-size: 3.5vw;
+  font-size: 2vw;
+}
+
+.pText {
+  font-size: 1.5vw;
 }
 
 .bannerHeading {
   font-size: 5vw;
+}
+
+.bannerButton {
+  border-radius: 10px;
+  border-color: #c4c4c4;
+  background-color: #c4c4c4;
+  color: black;
+}
+
+.bannerButton:hover {
+  border-color: #adadad;
+  background-color: #adadad;
+}
+
+.contacts {
+  color: #848484;
+}
+
+@media screen and (max-width: 600px) {
+  .bannerText {
+    font-size: 4vw;
+  }
+
+  .pText {
+    font-size: 4vw;
+  }
+
+  .bannerButton {
+    border-radius: 10px;
+    border-color: #c4c4c4;
+    background-color: #c4c4c4;
+    color: black;
+  }
+
+  .bannerHeading {
+    font-size: 10vw;
+  }
 }

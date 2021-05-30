@@ -1,49 +1,86 @@
 .navbarContainer {
-    padding: 30px 15%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100px;
+  padding: 30px 15%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
 }
 .navbarItems {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .navbarLogo img {
-    width: 70px;
-    height: 70px;
-    transition: ease-in-out 0.5s;
+  width: 70px;
+  height: 70px;
+  transition: ease-in-out 0.5s;
 }
 .navbarLogo img:hover {
-    transition: ease-in-out 0.5s;
-    transform: rotate(130deg);
-    width: 80px;
-    height: 80px;
+  transition: ease-in-out 0.5s;
+  transform: rotate(130deg);
+  width: 80px;
+  height: 80px;
 }
 .navbarLinksContainer {
-    display: grid;
-    place-items: center;
-    height: 100%;
+  display: grid;
+  place-items: center;
+  height: 100%;
 }
 .navbarLinks {
-    font-family: "Poppins", sans-serif;
-    font-size: large;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    display: flex;
-    justify-content: flex-end;
+  font-family: "Poppins", sans-serif;
+  font-size: large;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  display: flex;
+  justify-content: flex-end;
 }
 .navbarLink {
-    margin: 0px 8px;
-    transition: ease-in-out 0.2s;
+  margin: 0px 8px;
+  transition: ease-in-out 0.2s;
 }
-.navbarLink:hover {
-    transition: ease-in-out 0.2s;
-    transform: translateY(5px);
+
+/*code starts here*/
+
+.navbarIcon {
+  padding-left: 15vw;
 }
-.currentLink {
-    font-weight: 700;
-    color: #c5b100;
+
+.navbarIcon img {
+  width: 70px;
+  height: 70px;
+}
+
+.navbarIcon img:hover {
+  transition: ease-in-out 0.5s;
+  transform: rotate(130deg);
+  width: 80px;
+  height: 80px;
+}
+
+.navbarItem:hover {
+  transition: ease-in-out 0.2s;
+  transform: translateY(5px);
+  text-decoration: none;
+  color: grey;
+}
+.navLink:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.navLinks {
+  padding-right: 15vw;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbarIcon {
+    padding-left: 0;
+  }
+
+  .navbarIcon img {
+    width: 50px;
+    height: 50px;
+  }
 }

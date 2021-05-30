@@ -1,5 +1,5 @@
 import logoMedium from "./../../resources/images/Logo-medium.png";
-
+import stylesCSS from "./styles.module.css";
 export default function Navbar(props) {
   var navLinks = [
     {
@@ -11,15 +11,14 @@ export default function Navbar(props) {
       href: "/classes",
     },
     {
-      title: "Questionbanks",
+      title: "Question Banks",
       href: "/questionbanks",
     },
   ];
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-grey pt-md-5 font-weight-bold text-dark">
-      <a href="/" className="navbar-brand pl-md-5">
-        {" "}
-        <img src={logoMedium} width="50" height="50" alt="" />
+    <nav className="navbar navbar-expand-sm navbar-light bg-grey font-weight-bold ">
+      <a href="/" className={"navbar-brand " + stylesCSS.navbarIcon}>
+        <img src={logoMedium} alt="" />
       </a>
       <button
         className="navbar-toggler"
@@ -28,13 +27,16 @@ export default function Navbar(props) {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse " id="navbarMenu">
+      <div
+        className={"collapse navbar-collapse " + stylesCSS.navLinks}
+        id="navbarMenu"
+      >
         <ul className="navbar-nav ml-auto">
           {navLinks.map((navlink) => {
             return (
               <div>
-                <li className="nav-item">
-                  <a href={navlink.href} className="nav-link">
+                <li className={"nav-item " + stylesCSS.navbarItem}>
+                  <a href={navlink.href} className={"p-2 " + stylesCSS.navLink}>
                     {navlink.title}
                   </a>
                 </li>

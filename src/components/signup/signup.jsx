@@ -97,12 +97,12 @@ class Signup extends React.Component {
         <div className="row">
           <div
             className={
-              "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  p-3 text-center " +
-              stylesCSS.rounded
+              "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  py-5 text-center " +
+              stylesCSS.border
             }
           >
             <div className="row py-4">
-              <div className="col-10 offset-1">
+              <div className="col-6 offset-3">
                 <img src={BannerLogo} alt="" className="img-fluid" />
               </div>
             </div>
@@ -113,7 +113,7 @@ class Signup extends React.Component {
             </div>
             <form>
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2 ">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="text"
@@ -126,7 +126,7 @@ class Signup extends React.Component {
                 </div>
               </div>
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="email"
@@ -140,7 +140,7 @@ class Signup extends React.Component {
               </div>
 
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="password"
@@ -153,7 +153,7 @@ class Signup extends React.Component {
                 </div>
               </div>
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="password"
@@ -165,7 +165,7 @@ class Signup extends React.Component {
                   />
                 </div>
               </div>
-              <div className="col-12">
+              <div className="col-12 text-secondary">
                 <a href="/login">Already have an account?</a>
               </div>
               <button

@@ -63,18 +63,18 @@ class Login extends React.Component {
       //     </div>
       // </div>
 
-      <div className="container bg-grey">
+      <div className="container">
         <div className="row m-5"></div>
         <div className="row m-md-5"></div>
         <div className="row">
           <div
             className={
-              "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  p-3 text-center " +
-              stylesCSS.rounded
+              "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  py-5  text-center px-0 " +
+              stylesCSS.border
             }
           >
-            <div className="row py-4">
-              <div className="col-10 offset-1">
+            <div className="row py-3">
+              <div className="col-6 offset-3">
                 <img src={BannerLogo} alt="" className="img-fluid" />
               </div>
             </div>
@@ -97,7 +97,7 @@ class Login extends React.Component {
                   />
                 </div>
               </div>
-              <div className="form-group">
+              <div className="form-group mb-1">
                 <div className="col-md-6 offset-md-3">
                   <input
                     className={"form-control " + stylesCSS.input}
@@ -110,7 +110,7 @@ class Login extends React.Component {
                   />
                 </div>
               </div>
-              <div className="col-12">
+              <div className="col-12 text-secondary">
                 <a href="/signup">Create Account</a>
               </div>
               <button

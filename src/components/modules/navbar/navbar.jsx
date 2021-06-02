@@ -34,7 +34,7 @@ export default function Navbar(props) {
         <ul className="navbar-nav ml-auto">
           {navLinks.map((navlink) => {
             return (
-              <div>
+              <div key={navlink.href}>
                 <li className={"nav-item " + stylesCSS.navbarItem}>
                   <a href={navlink.href} className={"p-2 " + stylesCSS.navLink}>
                     {navlink.title}

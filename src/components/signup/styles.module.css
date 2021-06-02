@@ -1,122 +1,3 @@
-/* .cardContainer {
-    height: 100vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.cardForm {
-    padding: 30px 80px;
-    height: auto;
-    width: auto;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 30px #c4c4c4;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Poppins", sans-serif;
-}
-.cardForm img {
-    width: 250px;
-    height: auto;
-    margin: 20px;
-}
-.cardForm h3 {
-    margin-bottom: 20px;
-}
-.cardForm a {
-    margin: 5px 0px;
-    color: #838383;
-    font-size: small;
-}
-.cardForm a:hover {
-    color: black;
-}
-.input {
-    font-family: "Poppins", sans-serif;
-
-    height: 40px;
-    width: 250px;
-    text-align: center;
-    border-radius: 10px;
-    border-width: 0px;
-
-    background-color: #c4c4c4;
-}
-.input::placeholder {
-    text-align: center;
-    color: #838383;
-}
-.input:focus {
-    outline: none;
-    border: 2px #838383 solid;
-}
-.button {
-    cursor: pointer;
-    font-weight: 700;
-
-    height: 40px;
-    padding: 0px 20px;
-    width: fit-content;
-    margin: 10px 0px;
-
-    border-width: 0px;
-    border-radius: 6px;
-    background-color: #ffe600;
-}
-.button:hover {
-    background-color: #ddc700;
-}
-.button:focus {
-    outline: none;
-}
-.button:active {
-    color: white;
-    background-color: #838383;
-} */
-
-/* 
-.input {
-  font-family: "Poppins", sans-serif;
-
-  text-align: center;
-  border-radius: 10px;
-  border-width: 0px;
-
-  background-color: #c4c4c4;
-}
-.button {
-  cursor: pointer;
-  font-weight: 700;
-
-  height: 40px;
-  padding: 0px 20px;
-  width: fit-content;
-  margin: 10px 0px;
-
-  border-width: 0px;
-  border-radius: 6px;
-  background-color: #ffe600;
-}
-.button:hover {
-  background-color: #ddc700;
-}
-.button:focus {
-  outline: none;
-}
-.button:active {
-  color: white;
-  background-color: #838383;
-}
-
-.rounded {
-  border-radius: 10px;
-} */
 
 .input {
   font-family: "Poppins", sans-serif;
@@ -163,14 +44,13 @@ a:hover {
   border-radius: 20px;
 }
 
-html {
-  background-color: #eee;
-}
+
 
 @media screen and (max-width: 600px) {
   html,
-  body {
-    background-color: white !important;
+  body,
+  .formBoxBackground {
+    background-color: white;
   }
   .border {
     box-shadow: none !important;

@@ -1,114 +1,3 @@
-/* .centerCard {
-    padding: 50px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-}
-.centerCard img {
-    width: 800px;
-    height: auto;
-}
-
-@media screen and (max-width: 1000px) {
-    .centerCard img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.headBanner {
-    text-align: center;
-    height: 500px;
-    padding: 100px 0px;
-}
-.headBanner p {
-    font-size: 2.2em;
-}
-
-.headBanner button {
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-
-    height: 40px;
-    width: 150px;
-    margin: 25px 10px;
-
-    border-width: 0px;
-    border-radius: 8px;
-    background-color: #c4c4c4;
-}
-.headBanner button:hover {
-    background-color: #adadad;
-}
-.headBanner button:focus {
-    outline: none;
-}
-.headBanner button:active {
-    color: white;
-    background-color: #838383;
-}
-
-.whiteBackground {
-    background-color: white;
-}
-
-.featureContainer {
-    padding: 100px 50px;
-    text-align: center;
-}
-
-.featureContainer h1 {
-    font-size: 4em;
-    letter-spacing: -3px;
-}
-.featureContainer p {
-    font-weight: 400;
-    font-size: 1.5em;
-}
-
-.feature {
-    text-align: center;
-    padding: 20px 40px;
-}
-
-.featureRow {
-    display: flex;
-    flex-direction: row;
-}
-
-.featureCol {
-    display: flex;
-    flex-direction: column;
-}
-
-.contactDetails {
-    font-family: "Poppins", sans-serif;
-    font-weight: normal;
-    padding: 40px 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.developer,
-.developerDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.developerDetails {
-    text-align: right;
-}
-.developer a:hover {
-    color: blue;
-} */
-
 .bannerText {
   font-size: 2vw;
 }
@@ -131,6 +20,10 @@
 .bannerButton:hover {
   border-color: #adadad;
   background-color: #adadad;
+}
+.tutorial:hover {
+  text-decoration: none;
+  color: grey;
 }
 
 .contacts {

@@ -77,21 +77,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      // <div>
-      //     <div className={stylesCSS.cardContainer}>
-      //         <div className={stylesCSS.cardForm}>
-      //             <img src={BiggerLogo} alt="logo"/>
-      //             <h3>Examiner Signup</h3>
-      //             <input className={stylesCSS.input} type="text" name="" id="username" placeholder="Username" required onChange={this.formChange}/>
-      //             <input className={stylesCSS.input} type="email" name="" id="email" placeholder="Email" required onChange={this.formChange}/>
-      //             <input className={stylesCSS.input} type="password" name="" id="password" placeholder="Password" required onChange={this.formChange}/>
-      //             <input className={stylesCSS.input} type="password" name="" id="repeatPassword" placeholder=" Repeat Password" required onChange={this.formChange}/>
-      //             <a href="/login">Already have an account</a>
-      //             <button className={stylesCSS.button} onClick={this.signupButtonHandler}>Signup</button>
-      //         </div>
-      //     </div>
-      // </div>
-      <div className="container bg-grey">
+      <div className={"container " + stylesCSS.formBoxBackground}>
         <div className="row m-md-5"></div>
         <div className="row m-3"></div>
         <div className="row">

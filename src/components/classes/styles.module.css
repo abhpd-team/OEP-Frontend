@@ -61,7 +61,6 @@ body {
 .deleteButton {
   cursor: pointer;
   color: #ff0000;
-  padding-top: 20px;
 }
 
 .addNewCandidateSection {

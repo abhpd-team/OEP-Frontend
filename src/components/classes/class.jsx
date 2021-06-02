@@ -406,7 +406,7 @@ class Class extends Component {
                                       </div>
                                     </div>
                                     <div className="row ">
-                                      <div className="col text-center text-danger pt-2">
+                                      <div className="col text-center text-danger">
                                         <div
                                           className={stylesCSS.deleteButton}
                                           onClick={() =>

@@ -1,8 +1,86 @@
 .Heading {
   font-size: 5vw;
 }
-
-.buttonIcon {
+.tutorial {
+  font-size: 100px;
+}
+/* .buttonIcon {
   border: none;
   background: transparent;
+  border-radius: 50%;
+} */
+.buttonIcon:hover {
+  border: #ffe500 solid 5px;
+}
+
+.step {
+  font-size: 20px;
+}
+
+i {
+  font-size: 3vw;
+  line-height: 60px;
+  transform: 0.6s;
+}
+
+/* .iconContainer {
+  min-height: 100px;
+} */
+
+.icon {
+  position: relative;
+  display: block;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 100px;
+  background-color: #cdcdcd;
+  text-align: center;
+  transition: transform 200ms;
+}
+.icon:hover {
+  background-color: #fce51dbd;
+  transition: 0.6s;
+  transform: translateY(-5px);
+}
+.sectionHeading {
+  font-weight: bolder;
+  font-size: 4vw;
+}
+
+.subHeading {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.active {
+  background-color: #ffe500;
+}
+
+@media screen and (max-width: 767px) {
+  .icon {
+    height: 16vw;
+    width: 16vw;
+  }
+  i {
+    font-size: 5vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .tutorial {
+    font-size: 60px;
+  }
+  .buttonText {
+    font-size: small;
+  }
+  .subHeading,
+  .sectionHeading {
+    font-size: larger;
+  }
+  .step {
+    font-size: 15px;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
 }

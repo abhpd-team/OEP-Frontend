@@ -1,59 +1,11 @@
-/* .cardContainer {
-  height: 100vh;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cardForm {
-  padding: 30px 80px;
-  height: auto;
-  width: auto;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 2px 2px 30px #c4c4c4;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Poppins", sans-serif;
-}
-.cardForm img {
-  width: 250px;
-  height: auto;
-  margin: 20px;
-}
-.cardForm h3 {
-  margin-bottom: 20px;
-}
-.cardForm a {
-  margin: 5px 0px;
-  color: #838383;
-  font-size: small;
-}
-.cardForm a:hover {
-  color: black;
-}
-
-.input::placeholder {
-  text-align: center;
-  color: #838383;
-}
-.input:focus {
-  outline: none;
-  border: 2px #838383 solid;
-} */
-
 .input {
   font-family: "Poppins", sans-serif;
 
   text-align: center;
   border-radius: 10px;
   border-width: 0px;
-
+  font-size: small;
+  height: 40px;
   background-color: #c4c4c4;
 }
 .button {
@@ -80,6 +32,25 @@
   background-color: #838383;
 }
 
-.rounded {
-  border-radius: 10px;
+a {
+  font-size: small;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.border {
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  html,
+  body,
+  .formBoxBackground {
+    background-color: white;
+  }
+  .border {
+    box-shadow: none !important;
+  }
 }

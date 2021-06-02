@@ -11,6 +11,7 @@ import Exams from "./components/exams/exams";
 import Exam from "./components/exams/exam";
 import QuestionBanks from "./components/questionbanks/questionbanks";
 import QuestionBank from "./components/questionbanks/questionbank";
+import Tutorial from "./components/tutorial/tutorial";
 
 import ExamLive from "./components/examlive/examlive";
 
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/exams/:examId" exact component={Exam} />
                     <Route path="/classes" exact component={Classes} />
                     <Route path="/classes/:classId" exact component={Class} />
+                    <Route path="/tutorial" exact component={Tutorial} />
                     <Route
                         path="/questionbanks"
                         exact

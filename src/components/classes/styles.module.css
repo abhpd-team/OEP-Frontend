@@ -1,151 +1,162 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #eeeeee;
+  background-color: #eeeeee;
 }
 
 /* New Design */
 
 .cardContainer {
-    margin: 20px 10px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  margin: 20px 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .addNewContainer {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .footerContainer {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 /* Design elements for /class/j3r894jairo48arjlqr9ajlr4 */
 
 .classDetails {
-    margin: 0% 10%;
+  margin: 0% 10%;
 }
 
 .table {
-    margin: 8px 0px;
-    width: 100%;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    border-collapse: collapse;
+  margin: 8px 0px;
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border-collapse: collapse;
 }
 
 .td {
-    padding: 0px;
-    border: 1px solid #c4c4c4;
+  padding: 0px;
+  border: 1px solid #c4c4c4;
 }
 
 .tableRow {
-    height: 50px;
-    border: 1px solid #c4c4c4;
+  height: 50px;
+  border: 1px solid #c4c4c4;
 }
 
 .tableEntry {
-    background-color: white;
+  background-color: white;
 }
 
 .deleteButton {
-    cursor: pointer;
-    color: #ff0000;
+  cursor: pointer;
+  color: #ff0000;
 }
 
 .addNewCandidateSection {
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    margin: 100px 0px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 100px 0px;
 }
 
 .addNewCandidateSection h2 {
-    letter-spacing: -1px;
+  letter-spacing: -1px;
 }
 
 .addNewCandidateCard {
-    background-color: #c4c4c4;
-    border-radius: 10px;
-    width: fit-content;
-    padding: 4px 4px;
-    margin: 20px 0px 50px 0px;
+  background-color: #654242;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 4px 4px;
+  margin: 20px 0px 50px 0px;
 }
-
+.addCandidate {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 2px 0px;
+}
 .input {
-    font-family: "Poppins", sans-serif;
-
-    margin: 0px 4px;
-    height: 40px;
-    width: 200px;
-    text-align: center;
-    border-radius: 6px;
-    border-width: 0px;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  border-radius: 6px;
+  border-width: 0px;
 }
 .input::placeholder {
-    text-align: center;
-    color: #838383;
+  text-align: center;
+  color: #838383;
 }
 .input:focus {
-    outline: none;
+  outline: none;
 }
 
 .addButton {
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 
-    height: 40px;
-    width: 100px;
-    margin: 4px;
+  height: 40px;
+  width: 100px;
+  margin: 4px;
 
-    border-width: 0px;
-    border-radius: 6px;
-    background-color: #ffe600;
+  border-width: 0px;
+  border-radius: 6px;
+  background-color: #ffe600;
 }
 .addButton:hover {
-    background-color: #ddc700;
+  background-color: #ddc700;
 }
 .addButton:focus {
-    outline: none;
+  outline: none;
 }
 .addButton:active {
-    color: white;
-    background-color: #838383;
+  color: white;
+  background-color: #838383;
 }
 
-/* --------------------------------------------- */
-/* .listItemContainer {
-    background-color: white;
-
-    padding: 0px 20px;
-    height: 50px;
-    border: solid darkgray 1px;
-    border-top-width: 0px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.addClass {
+  background-color: #838383;
 }
 
-.listTitleContainer {
-    background-color: #eeeeee;
+.accordianToggle {
+  display: none;
 }
 
-.listItem {
-    display: flex;
-    justify-content: space-evenly;
+.accordianHeader:first-child {
+  border-radius: 10px;
+}
+.accordianCard {
+  border-radius: 10px;
+  border: none;
+}
+
+.sideHeaderMobile {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+  .table {
+    display: none;
+  }
+  .accordianToggle {
+    display: block;
+  }
+  .input {
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    text-align: center;
+    border-radius: 6px;
+  }
+  .sideHeaderMobile {
+    display: block;
+  }
 }
-
-*/

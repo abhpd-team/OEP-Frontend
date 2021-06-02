@@ -77,32 +77,18 @@ class Signup extends React.Component {
 
   render() {
     return (
-      // <div>
-      //     <div className={stylesCSS.cardContainer}>
-      //         <div className={stylesCSS.cardForm}>
-      //             <img src={BiggerLogo} alt="logo"/>
-      //             <h3>Examiner Signup</h3>
-      //             <input className={stylesCSS.input} type="text" name="" id="username" placeholder="Username" required onChange={this.formChange}/>
-      //             <input className={stylesCSS.input} type="email" name="" id="email" placeholder="Email" required onChange={this.formChange}/>
-      //             <input className={stylesCSS.input} type="password" name="" id="password" placeholder="Password" required onChange={this.formChange}/>
-      //             <input className={stylesCSS.input} type="password" name="" id="repeatPassword" placeholder=" Repeat Password" required onChange={this.formChange}/>
-      //             <a href="/login">Already have an account</a>
-      //             <button className={stylesCSS.button} onClick={this.signupButtonHandler}>Signup</button>
-      //         </div>
-      //     </div>
-      // </div>
-      <div className="container bg-grey">
+      <div className={"container " + stylesCSS.formBoxBackground}>
         <div className="row m-md-5"></div>
         <div className="row m-3"></div>
         <div className="row">
           <div
             className={
-              "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  p-3 text-center " +
-              stylesCSS.rounded
+              "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  py-5 text-center " +
+              stylesCSS.border
             }
           >
             <div className="row py-4">
-              <div className="col-10 offset-1">
+              <div className="col-6 offset-3">
                 <img src={BannerLogo} alt="" className="img-fluid" />
               </div>
             </div>
@@ -113,7 +99,7 @@ class Signup extends React.Component {
             </div>
             <form>
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2 ">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="text"
@@ -126,7 +112,7 @@ class Signup extends React.Component {
                 </div>
               </div>
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="email"
@@ -140,7 +126,7 @@ class Signup extends React.Component {
               </div>
 
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="password"
@@ -153,7 +139,7 @@ class Signup extends React.Component {
                 </div>
               </div>
               <div className="form-group">
-                <div className="col-md-6 offset-md-3">
+                <div className="col-md-8 offset-md-2">
                   <input
                     className={"form-control " + stylesCSS.input}
                     type="password"
@@ -165,7 +151,7 @@ class Signup extends React.Component {
                   />
                 </div>
               </div>
-              <div className="col-12">
+              <div className="col-12 text-secondary">
                 <a href="/login">Already have an account?</a>
               </div>
               <button

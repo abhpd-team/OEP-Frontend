@@ -279,6 +279,10 @@ a:hover {
     min-width: 150px;
 }
 
+.quesitonResponseCard_buttons_mobile {
+    display: none;
+}
+
 .confirmButton {
     cursor: pointer;
     font-family: "Poppins", sans-serif;
@@ -335,11 +339,10 @@ a:hover {
         padding: 5%;
     }
     .quesitonResponseCard_buttons {
-        flex-direction: column;
-        align-items: center;
+        display: none;
     }
-    .quesitonResponseCard_buttons button {
-        width: 80%;
+    .quesitonResponseCard_buttons_mobile {
+        display: inline;
     }
 }
 

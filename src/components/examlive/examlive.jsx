@@ -760,6 +760,37 @@ class ExamLive extends Component {
                           Next
                         </button>
                       </div>
+                      <div className={stylesCSS.quesitonResponseCard_buttons_mobile}>
+                        <center>
+                          <div className="row-6">
+                            <button
+                              className={`${stylesCSS.confirmButton} ${stylesCSS.examControlButtons}`}
+                              onClick={this.previousButtonHandler}
+                            >
+                              Previous
+                            </button>
+                            <button
+                              className={`${stylesCSS.confirmButton} ${stylesCSS.examControlButtons}`}
+                              onClick={this.nextButtonHandler}
+                            >
+                              Next
+                            </button>
+                          </div>
+                          
+                          <button
+                            className={`${stylesCSS.confirmButton} ${stylesCSS.examControlButtons} ${stylesCSS.markButton}`}
+                            onClick={() => {
+                              this.markHandler(this.state.currentQuestionIndex);
+                            }}
+                          >
+                            {this.state.markedIndexes.indexOf(
+                              this.state.currentQuestionIndex
+                            ) >= 0
+                              ? "UnMark"
+                              : "Review Later"}
+                          </button>
+                        </center>
+                      </div>
                     </div>
                   </div>
                 ) : (

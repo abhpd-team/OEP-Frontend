@@ -3,6 +3,7 @@ import moment from "moment";
 
 import BiggerLogo from "./../resources/images/Bigger-logo.png";
 import MediumLogo from "./../resources/images/Logo-medium.png";
+import BannerLogo from "./../resources/images/Bigger-logo.png";
 
 import Footer from "./../modules/footer/footer";
 
@@ -46,7 +47,10 @@ class ExamLive extends Component {
     this.loginRequestHandler = this.loginRequestHandler.bind(this);
     this.questionChangeHandler = this.questionChangeHandler.bind(this);
     this.generatelisArr = this.generatelisArr.bind(this);
+
+    this.previousButtonHandler = this.previousButtonHandler.bind(this);
     this.nextButtonHandler = this.nextButtonHandler.bind(this);
+
     this.markHandler = this.markHandler.bind(this);
     this.isCorrectOption = this.isCorrectOption.bind(this);
     this.setColor = this.setColor.bind(this);
@@ -233,6 +237,17 @@ class ExamLive extends Component {
     // console.log(this.state.answeredIndexes);
   }
 
+  async previousButtonHandler() {
+    if (
+      this.state.currentQuestionIndex - 1 >= 0
+    )
+      await this.setState((state) => {
+        return {
+          currentQuestionIndex: state.currentQuestionIndex - 1,
+        };
+      });
+  }
+
   async nextButtonHandler() {
     if (
       this.state.currentQuestionIndex + 1 <
@@ -382,10 +397,21 @@ class ExamLive extends Component {
         {this.state.resultScreen ? (
           <div className={stylesCSS.resultPage}>
             <div className={stylesCSS.reportContainer}>
-              <img src={BiggerLogo} alt="" />
+              <img src={BiggerLogo} className={stylesCSS.topImage} alt="" />
               <p className={stylesCSS.reportDate}>
                 {moment().format("MMMM Do YYYY")}
               </p>
+              <div className={stylesCSS.candidateInfoMobile}>
+                <h2>{this.state.result.candidateName}</h2>
+                <p>has scored</p>
+                <h2>
+                  {this.state.result.Marks}/
+                  {this.state.questionBank.questions
+                    ? this.state.questionBank.questions.length
+                    : ""}
+                </h2>{" "}
+                <p> in </p> <h2>{this.state.result.examName}</h2>
+              </div>
               <div className={stylesCSS.candidateInfo}>
                 <div className={stylesCSS.displayAsRow}>
                   <h2>{this.state.result.candidateName}</h2>
@@ -521,33 +547,63 @@ class ExamLive extends Component {
         ) : this.state.candidateId === "" &&
           this.state.candidatePassword === "" &&
           this.state.loadingQuestions ? (
+
           // Candidate Login
-          <div className={stylesCSS.cardContainer}>
-            <div className={stylesCSS.cardForm}>
-              <img src={BiggerLogo} alt="logo" />
-              <h3>Candidate Login</h3>
-              <input
-                className={stylesCSS.input}
-                type="text"
-                name=""
-                id="candidateId"
-                placeholder="Id"
-                required
-              />
-              <input
-                className={stylesCSS.input}
-                type="password"
-                name=""
-                id="candidatePassword"
-                placeholder="Password"
-                required
-              />
-              <button
-                className={stylesCSS.button}
-                onClick={this.loginRequestHandler}
-              >
-                Start Exam
-              </button>
+          <div>
+            <div className={"container " + stylesCSS.formBoxBackground}>
+              <div className="row m-md-5"></div>
+              <div className="row m-5"></div>
+              <div className="row">
+                <div
+                  className={
+                    "col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 shadow-lg bg-white  py-5  text-center px-0 " +
+                    stylesCSS.border
+                  }
+                >
+                  <div className="row py-3">
+                    <div className="col-6 offset-3">
+                      <img src={BannerLogo} alt="" className="img-fluid" />
+                    </div>
+                  </div>
+                  <div className="row pb-3">
+                    <div className="col text-center text-secondary font-weight-bold h5">
+                      Candidate Login
+                    </div>
+                  </div>
+                  <form>
+                    <div className="form-group">
+                      <div className="col-md-6 offset-md-3">
+                        <input
+                          className={"form-control " + stylesCSS.input}
+                          type="text"
+                          name=""
+                          id="candidateId"
+                          placeholder="Id"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group mb-1">
+                      <div className="col-md-6 offset-md-3">
+                        <input
+                          className={"form-control " + stylesCSS.input}
+                          type="password"
+                          name=""
+                          id="candidatePassword"
+                          placeholder="Password"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <button
+                      className={stylesCSS.button}
+                      onClick={this.loginRequestHandler}
+                    >
+                      Start Exam
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         ) : (
@@ -625,11 +681,6 @@ class ExamLive extends Component {
             <div className={stylesCSS.mainContainer}>
               <div className={stylesCSS.questionIndexList}>
                 {this.generatelisArr().map((e) => e)}
-                <center>
-                  <p>
-                    <b>End</b>
-                  </p>
-                </center>
               </div>
               <div className={stylesCSS.questionContainer}>
                 {this.state.questionBank.questions ? (
@@ -655,30 +706,29 @@ class ExamLive extends Component {
                           return (
                             <div
                               key={i}
-                              className={stylesCSS.quesitonResponseCard_option}
+                              className={`${stylesCSS.quesitonResponseCard_option} 
+                              ${
+                                stylesCSS.option
+                              }
+                              ${
+                                this.isCorrectOption(
+                                  this.state.questionBank.questions[
+                                    this.state.currentQuestionIndex
+                                  ]._id,
+                                  option._id
+                                )
+                                  ? `${stylesCSS.optionChecked}`
+                                  : ""
+                              }`}
+                              onClick={() => {
+                                this.recordResponse(
+                                  this.state.questionBank.questions[
+                                    this.state.currentQuestionIndex
+                                  ]._id,
+                                  option._id
+                                );
+                              }}
                             >
-                              <i
-                                className={`fas fa-check-square fa-2x ${
-                                  stylesCSS.checkMark
-                                } ${
-                                  this.isCorrectOption(
-                                    this.state.questionBank.questions[
-                                      this.state.currentQuestionIndex
-                                    ]._id,
-                                    option._id
-                                  )
-                                    ? `${stylesCSS.checkMarkChecked}`
-                                    : ""
-                                }`}
-                                onClick={() => {
-                                  this.recordResponse(
-                                    this.state.questionBank.questions[
-                                      this.state.currentQuestionIndex
-                                    ]._id,
-                                    option._id
-                                  );
-                                }}
-                              ></i>
                               <p>{option.value}</p>
                             </div>
                           );
@@ -686,13 +736,13 @@ class ExamLive extends Component {
                       </div>
                       <div className={stylesCSS.quesitonResponseCard_buttons}>
                         <button
-                          className={`${stylesCSS.confirmButton}`}
-                          onClick={this.nextButtonHandler}
+                          className={`${stylesCSS.confirmButton} ${stylesCSS.examControlButtons}`}
+                          onClick={this.previousButtonHandler}
                         >
-                          Next
+                          Previous
                         </button>
                         <button
-                          className={`${stylesCSS.confirmButton}`}
+                          className={`${stylesCSS.confirmButton} ${stylesCSS.examControlButtons} ${stylesCSS.markButton}`}
                           onClick={() => {
                             this.markHandler(this.state.currentQuestionIndex);
                           }}
@@ -701,7 +751,13 @@ class ExamLive extends Component {
                             this.state.currentQuestionIndex
                           ) >= 0
                             ? "UnMark"
-                            : "Mark"}
+                            : "Review Later"}
+                        </button>
+                        <button
+                          className={`${stylesCSS.confirmButton} ${stylesCSS.examControlButtons}`}
+                          onClick={this.nextButtonHandler}
+                        >
+                          Next
                         </button>
                       </div>
                     </div>

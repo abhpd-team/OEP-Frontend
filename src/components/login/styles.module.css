@@ -1,56 +1,55 @@
 .input {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 
-  text-align: center;
-  border-radius: 10px;
-  border-width: 0px;
-  font-size: small;
-  height: 40px;
-  background-color: #c4c4c4;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 0px;
+    font-size: small;
+    height: 40px;
+    background-color: #c4c4c4;
 }
 .button {
-  cursor: pointer;
-  font-weight: 700;
+    cursor: pointer;
+    font-weight: 700;
 
-  height: 40px;
-  padding: 0px 20px;
-  width: fit-content;
-  margin: 10px 0px;
+    height: 40px;
+    padding: 0px 20px;
+    width: fit-content;
+    margin: 10px 0px;
 
-  border-width: 0px;
-  border-radius: 6px;
-  background-color: #ffe600;
+    border-width: 0px;
+    border-radius: 6px;
+    background-color: #ffe600;
 }
 .button:hover {
-  background-color: #ddc700;
+    background-color: #ddc700;
 }
 .button:focus {
-  outline: none;
+    outline: none;
 }
 .button:active {
-  color: white;
-  background-color: #838383;
+    color: white;
+    background-color: #838383;
 }
 
 a {
-  font-size: small;
+    font-size: small;
 }
 a:hover {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .border {
-  border-radius: 20px;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 600px) {
-  html,
-  body,
-  .formBoxBackground {
-    background-color: white;
-  }
-  .border {
-    box-shadow: none !important;
-  }
+    .formBoxBackground {
+        height: 100vh;
+        background-color: white;
+    }
+    .border {
+        box-shadow: none !important;
+    }
 }

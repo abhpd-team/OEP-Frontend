@@ -1,61 +1,13 @@
 /* Candidate Login */
-.cardContainer {
-    height: 100vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.cardForm {
-    padding: 30px 80px;
-    height: auto;
-    width: auto;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 30px #c4c4c4;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Poppins", sans-serif;
-}
-.cardForm img {
-    width: 250px;
-    height: auto;
-    margin: 20px;
-}
-.cardForm h3 {
-    margin-bottom: 20px;
-}
-.cardForm a {
-    margin: 5px 0px;
-    color: #838383;
-    font-size: small;
-}
-.cardForm a:hover {
-    color: black;
-}
 .input {
     font-family: "Poppins", sans-serif;
 
-    height: 40px;
-    width: 250px;
     text-align: center;
     border-radius: 10px;
     border-width: 0px;
-
+    font-size: small;
+    height: 40px;
     background-color: #c4c4c4;
-}
-.input::placeholder {
-    text-align: center;
-    color: #838383;
-}
-.input:focus {
-    outline: none;
-    border: 2px #838383 solid;
 }
 .button {
     cursor: pointer;
@@ -80,6 +32,29 @@
     color: white;
     background-color: #838383;
 }
+
+a {
+    font-size: small;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.border {
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .formBoxBackground {
+        height: 100vh;
+        background-color: white;
+    }
+    .border {
+        box-shadow: none !important;
+    }
+}
+
 /* end of candidate login */
 
 /* Exam Interface */
@@ -177,7 +152,8 @@
     font-size: 1.1em;
     font-weight: 800;
 
-    margin: 1px;
+    border: 1px #c4c4c4 solid;
+    padding: 34px;
     width: 68px;
     height: 68px;
     background-color: white;
@@ -187,7 +163,7 @@
     justify-content: center;
 }
 .questionIndex:hover {
-    border: 2px black solid;
+    border: 1px black solid;
 }
 .questionIndex:active {
     background-color: #7b721c;
@@ -215,7 +191,6 @@
     width: 90%;
 
     display: flex;
-    align-items: center;
     justify-content: center;
 
     overflow: scroll;
@@ -236,9 +211,6 @@
 .quesitonResponseCard {
     height: 100%;
     width: 100%;
-    background-color: #dfdede;
-    padding: 50px;
-    border-radius: 10px;
 }
 
 .quesitonResponseCard_question {
@@ -255,42 +227,56 @@
 }
 
 .quesitonResponseCard_option {
+    background-color: white;
+    margin: 10px 0px;
+    padding: 8px 30px;
+    min-height: 60px;
+
     display: flex;
     flex-direction: row;
 
     align-items: center;
+    border-radius: 8px;
+
+    overflow-wrap: break-word;
 }
 
 .quesitonResponseCard_option i {
     margin: 10px 10px;
 }
-.checkMark {
+.option {
     cursor: pointer;
-    color: #d3ffe0;
+    border: 3px solid;
+    border-color: white;
 }
 
-.checkMark:hover {
-    color: #b8e4c4;
+.option:hover {
+    border-color: #b8e4c4;
 }
 
-.checkMark:active {
-    color: #838383;
+.option:active {
+    border-color: #838383;
 }
 
-.checkMarkChecked {
-    color: #009a2e;
+.optionChecked {
+    background-color: #d3ffe0;
+    border-color: #009a2e;
 }
-.checkMarkChecked:hover {
-    color: #007523;
+.optionChecked:hover {
+    border-color: #007523;
 }
 
 .quesitonResponseCard_buttons {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .quesitonResponseCard_buttons button {
     margin: 10px;
+}
+
+.examControlButtons {
+    min-width: 150px;
 }
 
 .confirmButton {
@@ -319,15 +305,53 @@
     background-color: #838383;
 }
 
+.markButton {
+    background-color: #99a3ff;
+}
+.markButton:hover {
+    background-color: #7d8aff;
+}
+
+@media screen and (max-width: 900px) {
+    .topBar {
+        padding-right: 5px;
+    }
+    .questionsAttemptDetails {
+        display: none;
+    }
+    .mainContainer {
+        width: 100%;
+        flex-direction: column;
+    }
+    .questionIndexList {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+    }
+    .questionContainer {
+        width: 100%;
+    }
+    .quesitonResponseCardContainer {
+        padding: 5%;
+    }
+    .quesitonResponseCard_buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .quesitonResponseCard_buttons button {
+        width: 80%;
+    }
+}
+
 /* end of exam Interface */
 
 /* Result page */
 .resultPage {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
 }
 .reportContainer {
     margin: 80px;
+    height: fit-content;
 }
 .reportContainer img {
     height: auto;
@@ -347,6 +371,10 @@
 .candidateInfo {
     margin: 40px 20px;
 }
+.candidateInfoMobile {
+    margin: 40px 20px;
+    display: none;
+}
 .infograph td {
     padding: 10px;
 }
@@ -365,4 +393,26 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+@media screen and (max-width: 650px) {
+    .reportContainer img {
+        height: auto;
+        width: 100%;
+    }
+    .reportContainer {
+        text-align: center;
+    }
+    .candidateInfo {
+        display: none;
+    }
+    .candidateInfoMobile {
+        display: inline;
+    }
+    .examinerInfo {
+        align-items: center;
+    }
+    .infograph {
+        margin: 40px 0px;
+    }
 }

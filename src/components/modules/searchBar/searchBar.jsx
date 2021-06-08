@@ -8,16 +8,44 @@ export default function SearchBar(props) {
     let cards = document.getElementsByClassName("cardS");
     if (event.target.value !== "") {
       for (let i = 0; i < cards.length; i++) {
-        if (
-          cards[
-            i
-          ].firstElementChild.lastElementChild.firstElementChild.innerHTML
-            .toLowerCase()
-            .search(event.target.value.toLowerCase()) === -1
-        ) {
-          cards[i].classList.add("d-none");
+        if (props.parent === "exams" && i % 2 !== 0) {
+          console.log(cards[i], window.screen.width, i % 2 !== 0);
+          if (
+            cards[
+              i
+            ].firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.innerHTML
+              .toLowerCase()
+              .search(event.target.value.toLowerCase()) === -1
+          ) {
+            cards[i].classList.add("d-none");
+          } else {
+            cards[i].classList.remove("d-none");
+          }
+        } else if (props.parent === "exams") {
+          // console.log(cards[i], window.screen.width, i % 2 !== 0);
+          if (
+            cards[
+              i
+            ].firstElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.innerHTML
+              .toLowerCase()
+              .search(event.target.value.toLowerCase()) === -1
+          ) {
+            cards[i].classList.add("d-none");
+          } else {
+            cards[i].classList.remove("d-none");
+          }
         } else {
-          cards[i].classList.remove("d-none");
+          if (
+            cards[
+              i
+            ].firstElementChild.lastElementChild.firstElementChild.innerHTML
+              .toLowerCase()
+              .search(event.target.value.toLowerCase()) === -1
+          ) {
+            cards[i].classList.add("d-none");
+          } else {
+            cards[i].classList.remove("d-none");
+          }
         }
       }
     } else {

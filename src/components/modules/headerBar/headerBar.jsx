@@ -10,8 +10,8 @@ export default function HeaderBar(props) {
           </div>
         </a>
       </div>
-      <div className={stylesCSS.headerContainer}>
-        <h1>{props.header}</h1>
+      <div className={stylesCSS.headerContainer + " font-weight-bold h2 "}>
+        {props.header}
       </div>
       <div className={stylesCSS.sideHeaderContainer}>
         <strong>{props.sideHeader}</strong>

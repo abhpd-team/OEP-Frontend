@@ -3,7 +3,7 @@ import stylesCSS from "./styles.module.css";
 export default function AddNewCard(props) {
   return (
     <div className={stylesCSS.addNewCard}>
-      <h1>Add New</h1>
+      <h1 className={stylesCSS.heading}>Add New</h1>
       <form>
         <div className={stylesCSS.card}>
           <div className={stylesCSS.inputArea}>

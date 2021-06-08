@@ -73,3 +73,9 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.cardHeading {
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: -5%;
+}

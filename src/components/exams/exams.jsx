@@ -95,31 +95,26 @@ class Exams extends Component {
     ).value;
 
     // Converting time to UTC
-    const newExamStartTime = moment(
-      String(document.getElementById("newExamStartTime").value)
+    const newExamStartDateTime = moment(
+      String(document.getElementById("newExamStartDateTime").value)
     ).toISOString();
-    const newExamEndTime = moment(
-      String(document.getElementById("newExamEndTime").value)
-    ).toISOString();
-    const newExamDate = moment(
-      String(document.getElementById("newExamDate").value)
+    const newExamEndDateTime = moment(
+      String(document.getElementById("newExamEndDateTime").value)
     ).toISOString();
 
     console.log(newExamName);
     console.log(newExamClassId);
     console.log(newExamQuestionBankId);
-    console.log(newExamStartTime);
-    console.log(newExamEndTime);
-    console.log(newExamDate);
+    console.log(newExamStartDateTime);
+    console.log(newExamEndDateTime);
 
     if (
       newExamName !== "" &&
       newExamClassId !== "" &&
       newExamQuestionBankId !== "" &&
-      newExamStartTime !== null &&
-      newExamEndTime !== null &&
-      newExamDate !== null &&
-      moment(newExamStartTime).isBefore(newExamEndTime)
+      newExamStartDateTime !== null &&
+      newExamEndDateTime !== null &&
+      moment(newExamStartDateTime).isBefore(newExamEndDateTime)
     ) {
       const response = await fetch(
         process.env.REACT_APP_API_URI + "/exams/new",
@@ -132,9 +127,8 @@ class Exams extends Component {
           body: JSON.stringify({
             newExam: {
               examName: newExamName,
-              startTime: newExamStartTime,
-              endTime: newExamEndTime,
-              date: newExamDate,
+              startDateTime: newExamStartDateTime,
+              endDateTime: newExamEndDateTime,
               questionBankId: newExamQuestionBankId,
               classId: newExamClassId,
             },
@@ -151,9 +145,8 @@ class Exams extends Component {
       document.getElementById("newExamName").value = "";
       document.getElementById("newExamClass").value = "";
       document.getElementById("newExamQuestionBank").value = "";
-      document.getElementById("newExamStartTime").value = "";
-      document.getElementById("newExamEndTime").value = "";
-      document.getElementById("newExamDate").value = "";
+      document.getElementById("newExamStartDateTime").value = "";
+      document.getElementById("newExamEndDateTime").value = "";
     }
   }
 
@@ -239,10 +232,6 @@ class Exams extends Component {
                           this.deleteExam(e._id, e.examName);
                         }}
                       />
-                      // <div className={stylesCSS.listItem} key={indx}>
-                      //     <h2>{e.examName}</h2>
-                      //     <button onClick={async ()=> await this.deleteExam(e._id)}>--X--</button>
-                      // </div>
                     );
                   else if (
                     this.state.upcoming === false &&
@@ -261,10 +250,6 @@ class Exams extends Component {
                           this.deleteExam(e._id, e.examName);
                         }}
                       />
-                      // <div className={stylesCSS.listItem} key={indx}>
-                      //     <h2>{e.examName}</h2>
-                      //     <button onClick={async ()=> await this.deleteExam(e._id)}>--X--</button>
-                      // </div>
                     );
                 })}
           </div>
@@ -315,30 +300,21 @@ class Exams extends Component {
                     })}
               </select>
             </div>
-            <div className="col-md-4 text-center px-1 d-flex ">
+            <div className="col-md-6 text-center px-1 d-flex ">
               <input
                 type="text"
-                name="date"
-                placeholder="Exam Date"
-                id="newExamDate"
-                onFocus={this.inputToggler}
-              />
-            </div>
-            <div className="col-md-4 text-center px-1 d-flex ">
-              <input
-                type="text"
-                name="time"
+                name="datetime-local"
                 placeholder="Start Time"
-                id="newExamStartTime"
+                id="newExamStartDateTime"
                 onFocus={this.inputToggler}
               />
             </div>
-            <div className="col-md-4 text-center px-1 d-flex ">
+            <div className="col-md-6 text-center px-1 d-flex ">
               <input
                 type="text"
-                name="time"
+                name="datetime-local"
                 placeholder="End Time"
-                id="newExamEndTime"
+                id="newExamEndDateTime"
                 onFocus={this.inputToggler}
               />
             </div>
@@ -355,62 +331,6 @@ class Exams extends Component {
             </div>
           </div>
         </div>
-        {/* <div className={stylesCSS.addNewExamContainer}>
-        <h1>Create new Exam</h1>
-          <div className={stylesCSS.newExamInputContainer}>
-            <div className={stylesCSS.inputRow}>
-              <input
-                type="text"
-                name=""
-                id="newExamName"
-                placeholder="Exam Name"
-              />
-              <select name="" id="newExamClass">
-                <option value="" disabled selected hidden>
-                  Class
-                </option>
-                {this.state.loading
-                  ? ""
-                  : this.state.classes.map((e, indx) => {
-                      return (
-                        <option key={indx} value={e._id}>
-                          {e.className}
-                        </option>
-                      );
-                    })}
-              </select>
-              <select name="" id="newExamQuestionBank">
-                <option value="" disabled selected hidden>
-                  Question Bank
-                </option>
-                {this.state.loading
-                  ? ""
-                  : this.state.questionBanks.map((e, indx) => {
-                      return (
-                        <option key={indx} value={e._id}>
-                          {e.questionBankName}
-                        </option>
-                      );
-                    })}
-              </select>
-            </div>
-
-            <div className={stylesCSS.inputRow}>
-              <input type="datetime-local" id="newExamStartDateTime" />
-              <div className={stylesCSS.formText}>
-                <p>to</p>
-              </div>
-              <input type="datetime-local" id="newExamEndDateTime" />
-            </div>
-          </div>
-          <button
-            className={`${stylesCSS.addButton} ${stylesCSS.addQuestion}`}
-            onClick={this.addNewExam}
-          >
-            Create new Exam
-          </button>
-        </div> */}
-
         <footer className={stylesCSS.footerContainer}>
           <Footer />
         </footer>

@@ -1,185 +1,281 @@
 .footerContainer {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 .listBlock {
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 20px 10px;
+  align-items: center;
 }
 
 .addNewExamContainer {
-    font-family: "Poppins", sans-serif;
-    margin: 70px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "Poppins", sans-serif;
+  margin: 70px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .addNewExamContainer h1 {
-    letter-spacing: -1px;
+  letter-spacing: -1px;
 }
 
 .newExamInputContainer {
-    padding: 10px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: #c4c4c4;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #c4c4c4;
 }
 
 .inputRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 input,
 select {
-    margin: 5px;
-    height: 40px;
-    /* width: 200px; */
-    padding: 5px 10px;
-    border-radius: 5px;
-    border-width: 0px;
+  margin: 5px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-width: 0px;
+  width: 100%;
+  text-align: center;
 }
+
 .formText {
-    padding: 0px 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .addButton {
-    cursor: pointer;
-    font-weight: 700;
+  cursor: pointer;
+  font-weight: 700;
 
-    height: 40px;
-    padding: 0px 15px;
-    width: fit-content;
-    margin: 4px;
+  height: 40px;
+  padding: 0px 15px;
+  width: fit-content;
+  margin: 4px;
 
-    border-width: 0px;
-    border-radius: 6px;
-    background-color: #ffe600;
+  border-width: 0px;
+  border-radius: 6px;
+  background-color: #ffe600;
 }
 .addButton:hover {
-    background-color: #ddc700;
+  background-color: #ddc700;
 }
 .addButton:focus {
-    outline: none;
+  outline: none;
 }
 .addButton:active {
-    color: white;
-    background-color: #838383;
+  color: white;
+  background-color: #838383;
 }
 
 /* for exam candidates/results table */
 .examDetails {
-    padding: 0% 10%;
-    width: 100%;
+  padding: 0% 10%;
+  width: 100%;
 }
 
 .cardLinkRow {
-    margin: 5px 0px;
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    background-color: #838383;
-    border-radius: 5px;
-    color: white;
+  margin: 5px 0px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #838383;
+  border-radius: 5px;
+  color: white;
 }
 
 .cardLink {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cardLinkCopy {
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    align-items: center;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
 
-    height: 40px;
+  height: 40px;
 
-    padding: 0px 10px;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
+  padding: 0px 10px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
 }
 
 .cardLinkCopy p {
-    font-weight: 600;
+  font-weight: 600;
 }
 .cardLinkCopy:hover {
-    background-color: #838383;
+  background-color: #838383;
 }
 .cardLinkCopy:active {
-    background-color: #7e7100;
+  background-color: #7e7100;
 }
 
 .examDetailsCard {
-    display: flex;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 .examDetailsTextContainer {
-    background-color: #c4c4c4;
-    padding: 0px 20px;
-    margin: 20px 0px 50px 0px;
-    border-radius: 5px;
+  background-color: #c4c4c4;
+  padding: 0px 20px;
+  margin: 20px 0px 50px 0px;
+  border-radius: 5px;
 }
 
 .detailsCardTable {
-    padding: 20px 0px;
+  padding: 20px 0px;
 }
 
 .detailsCardTableRow {
-    height: 30px;
+  height: 30px;
 }
 
 .detailsCardTableRow td {
-    padding: 0px 10px;
+  padding: 0px 10px;
 }
 
 .tableHeader {
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    letter-spacing: -1px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 
 .greenTd {
-    background-color: #d3ffe0;
+  background-color: #88e043;
+  opacity: 0.8;
 }
 .redTd {
-    background-color: #ff8888;
+  background-color: #ff6666;
+  opacity: 0.8;
 }
 
 .table {
-    margin: 8px 0px;
-    width: 100%;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    border-collapse: collapse;
+  margin: 8px 0px;
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border-collapse: collapse;
 }
 
 .td {
-    padding: 0px;
-    border: 1px solid #c4c4c4;
+  padding: 0px;
+  border: 1px solid #c4c4c4;
 }
 
 .tableRow {
-    height: 50px;
-    border: 1px solid #c4c4c4;
+  height: 50px;
+  border: 1px solid #c4c4c4;
 }
 
 .tableEntry {
-    background-color: white;
+  background-color: white;
+}
+
+/*our code*/
+
+.addExam {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 2px 0px;
+}
+
+.inactiveButton {
+  background-color: #c4c4c4;
+  font-weight: bold;
+  border-color: transparent;
+}
+
+.activeButton {
+  font-weight: bold;
+  background-color: #ffe600;
+  border-color: transparent;
+}
+.activeButton:active {
+  font-weight: bold;
+  background-color: #ffe600;
+  border-color: transparent;
+}
+
+.inactiveButton:hover {
+  background-color: #ddc700;
+}
+
+.cardLinkURLclass {
+  overflow-wrap: normal;
+  user-select: none;
+  overflow: hidden;
+
+  padding: 3px 10px;
+}
+
+.cardLinkCopy {
+  cursor: pointer;
+  user-select: none;
+  /* display: flex; */
+  align-items: center;
+
+  /* height: 35px; */
+
+  padding: 5px;
+  font-weight: bold;
+  /* font-size: 100%; */
+  background-color: black;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.sideHeaderMobile {
+  display: none;
+}
+
+.schedule {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+}
+
+.accordianToggle {
+  display: none;
+}
+
+.accordianHeader:first-child {
+  border-radius: 10px;
+}
+
+.accordianCard {
+  border-radius: 10px;
+  border: none;
+}
+
+@media screen and (max-width: 520px) {
+  .schedule {
+    letter-spacing: -0.5px;
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .accordianToggle {
+    display: block;
+  }
+  .table {
+    display: none;
+  }
+  .sideHeaderMobile {
+    display: block;
+  }
 }

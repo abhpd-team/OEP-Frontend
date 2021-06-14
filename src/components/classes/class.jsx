@@ -24,7 +24,6 @@ class Class extends Component {
     this.accordianHeaderColor = this.accordianHeaderColor.bind(this);
     this.inputExcel = this.inputExcel.bind(this);
   }
-
   async fetchData() {
     const response = await fetch(
       process.env.REACT_APP_API_URI + "/classes/get",

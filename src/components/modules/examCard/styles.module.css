@@ -1,123 +1,144 @@
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 .card {
-    margin: 8px 0px;
-    font-family: "Poppins", sans-serif;
-    width: 70%;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  border-radius: 10px;
 }
-@media screen and (max-width: 1250px) {
-    .card {
-        width: 90%;
-    }
+
+.mobileCard {
+  display: none;
+}
+@media screen and (max-width: 790px) {
+  .card {
+    display: none;
+  }
+  .mobileCard {
+    display: block;
+  }
 }
 
 .cardColorTab {
-    width: 30px;
-    background-color: #ffe500;
-    border-radius: 10px 5px 5px 10px;
+  display: flex;
+  width: 30px;
+  background-color: #ffe500;
+  border-radius: 10px 5px 5px 10px;
 }
 .cardContent {
-    width: 100%;
-    padding: 10px 20px 10px 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px 10px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .cardHeadRow,
 .cardLinkRow,
 .cardButtons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .cardHeadRow {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .cardHeadItem {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .cardHeadTitle {
-    letter-spacing: -0.8px;
+  letter-spacing: -0.8px;
 }
 
 .cardHeadDate {
-    letter-spacing: -0.3px;
-    color: #888888;
+  letter-spacing: -0.3px;
+  color: #888888;
 }
 
 .cardLinkRow {
-    border-radius: 5px;
-    background-color: #eeeeee;
+  border-radius: 5px;
+  background-color: #eeeeee;
 }
 
 .cardLink {
-    padding: 5px 15px;
+  padding: 5px 15px;
 }
 
 .cardLinkURLclass {
-    overflow-wrap: normal;
-    user-select: none;
-    overflow: hidden;
-    width: 450px;
+  overflow-wrap: normal;
+  user-select: none;
+  overflow: hidden;
+  background-color: #eeeeee;
+  padding: 3px 10px;
 }
 
 .cardLinkCopy {
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    align-items: center;
+  cursor: pointer;
+  user-select: none;
+  /* display: flex; */
+  align-items: center;
 
-    height: 35px;
+  /* height: 35px; */
 
-    padding: 0px 10px;
-    background-color: #ffe500;
-    border-radius: 5px;
+  /* padding:10px; */
+  font-weight: bold;
+  font-size: 100%;
+  background-color: #ffe500;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .cardLinkCopy p {
-    font-weight: 600;
+  font-weight: 600;
 }
 .cardLinkCopy:hover {
-    color: white;
-    background-color: #838383;
+  color: white;
+  background-color: #838383;
 }
 .cardLinkCopy:active {
-    color: white;
-    background-color: #7e7100;
+  color: white;
+  background-color: #7e7100;
 }
 
 .button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: 5px;
-    margin: 0px 10px;
-    width: 50px;
-    height: 50px;
-    background-color: #eeeeee;
+  border-radius: 5px;
+  /* margin: 0px 10px; */
+  width: 90%;
+  height: 50%;
+  background-color: #eeeeee;
 }
 .button:hover {
-    transform: scale(1.1);
-    background-color: #ffe500;
+  transform: scale(1.1);
+  background-color: #ffe500;
 }
 .delButton:hover {
-    background-color: #ff8888;
+  background-color: #ff8888;
 }
 .button:focus {
-    outline: none;
+  outline: none;
 }
 .button:active {
-    color: white;
-    background-color: #838383;
+  color: white;
+  background-color: #838383;
+}
+
+.leftPad {
+  border-radius: 10px;
+  background-color: #ffe500;
+}
+.leftPad col {
+  width: 10px;
+}
+
+@media screen and (max-width: 790px) {
+  .linkToggle {
+    display: block;
+  }
 }

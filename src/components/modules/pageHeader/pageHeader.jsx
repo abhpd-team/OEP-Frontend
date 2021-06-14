@@ -1,9 +1,5 @@
-import stylesCSS from "./styles.module.css"
+import stylesCSS from "./styles.module.css";
 
-export default function PageHeader (props){
-    return (
-        <div className={stylesCSS.pageHeader}>
-            <h1>{props.header}</h1>
-        </div>
-    )
+export default function PageHeader(props) {
+  return <div className={stylesCSS.pageHeader}>{props.header}</div>;
 }

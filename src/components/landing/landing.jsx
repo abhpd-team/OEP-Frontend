@@ -73,7 +73,7 @@ export default function Landing (props){
                         </div>
                     </div>
                 </div>
-                <div className={stylesCSS.contactDetails}>
+                {/* <div className={stylesCSS.contactDetails}>
                     <div className={stylesCSS.developer}>
                         <p>Made with ❤️ by,<br/>
                         Abhishek Kumar Prasad | <a href="https://www.linkedin.com/in/abhpd/" target="_blank" rel="noopener noreferrer">Linkedin</a> | <a href="https://github.com/abhpd" target="_blank" rel="noopener noreferrer">Github</a> | <a href="https://twitter.com/abhpd" target="_blank" rel="noopener noreferrer">Twitter</a> |<br/>
@@ -88,7 +88,7 @@ export default function Landing (props){
                         abhpdmail@gmail.com <br/>
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
             <Footer/>
         </div>
